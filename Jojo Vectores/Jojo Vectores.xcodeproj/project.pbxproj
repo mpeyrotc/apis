@@ -17,6 +17,10 @@
 		283505741F9E4A070058CCE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283505721F9E4A070058CCE5 /* LaunchScreen.storyboard */; };
 		2835057F1F9E4A070058CCE5 /* Jojo_VectoresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835057E1F9E4A070058CCE5 /* Jojo_VectoresTests.swift */; };
 		2835058A1F9E4A070058CCE5 /* Jojo_VectoresUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283505891F9E4A070058CCE5 /* Jojo_VectoresUITests.swift */; };
+		283505981F9E5C310058CCE5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283505971F9E5C310058CCE5 /* MainViewController.swift */; };
+		2835059A1F9ECD140058CCE5 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283505991F9ECD140058CCE5 /* CreditsViewController.swift */; };
+		2835059C1F9ED1740058CCE5 /* MaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835059B1F9ED1740058CCE5 /* MaterialViewController.swift */; };
+		2835059E1F9ED19C0058CCE5 /* EvaluacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835059D1F9ED19C0058CCE5 /* EvaluacionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		283505851F9E4A070058CCE5 /* Jojo VectoresUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Jojo VectoresUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		283505891F9E4A070058CCE5 /* Jojo_VectoresUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jojo_VectoresUITests.swift; sourceTree = "<group>"; };
 		2835058B1F9E4A070058CCE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		283505971F9E5C310058CCE5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		283505991F9ECD140058CCE5 /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
+		2835059B1F9ED1740058CCE5 /* MaterialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialViewController.swift; sourceTree = "<group>"; };
+		2835059D1F9ED19C0058CCE5 /* EvaluacionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluacionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +117,13 @@
 				283505691F9E4A070058CCE5 /* GameScene.swift */,
 				2835056B1F9E4A070058CCE5 /* GameViewController.swift */,
 				2835056D1F9E4A070058CCE5 /* Main.storyboard */,
+				2835059D1F9ED19C0058CCE5 /* EvaluacionViewController.swift */,
+				2835059B1F9ED1740058CCE5 /* MaterialViewController.swift */,
 				283505701F9E4A070058CCE5 /* Assets.xcassets */,
 				283505721F9E4A070058CCE5 /* LaunchScreen.storyboard */,
 				283505751F9E4A070058CCE5 /* Info.plist */,
+				283505971F9E5C310058CCE5 /* MainViewController.swift */,
+				283505991F9ECD140058CCE5 /* CreditsViewController.swift */,
 			);
 			path = "Jojo Vectores";
 			sourceTree = "<group>";
@@ -273,6 +285,10 @@
 				2835056A1F9E4A070058CCE5 /* GameScene.swift in Sources */,
 				2835056C1F9E4A070058CCE5 /* GameViewController.swift in Sources */,
 				283505641F9E4A070058CCE5 /* AppDelegate.swift in Sources */,
+				283505981F9E5C310058CCE5 /* MainViewController.swift in Sources */,
+				2835059A1F9ECD140058CCE5 /* CreditsViewController.swift in Sources */,
+				2835059C1F9ED1740058CCE5 /* MaterialViewController.swift in Sources */,
+				2835059E1F9ED19C0058CCE5 /* EvaluacionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

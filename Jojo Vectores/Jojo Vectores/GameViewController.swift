@@ -40,6 +40,8 @@ class GameViewController: UIViewController {
                 }
             }
         }
+        
+        navigationItem.title = "Práctica"
     }
 
     override var shouldAutorotate: Bool {

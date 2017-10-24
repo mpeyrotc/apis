@@ -1,26 +1,169 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Cr2-zM-NUX">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Jojo_Vectores" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
                         <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
                     </layoutGuides>
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="851" y="314"/>
+        </scene>
+        <!--Jojo Vectores-->
+        <scene sceneID="yDf-6g-wTX">
+            <objects>
+                <viewController id="n75-lX-Z1A" customClass="MainViewController" customModule="Jojo_Vectores" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6c4-36-acv"/>
+                        <viewControllerLayoutGuide type="bottom" id="20K-Cl-b1I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eoN-eb-Fow">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="esx-4F-RjZ">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Jojo Vectores" id="Icf-wD-hzx"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeu-yh-dpB">
+                                <rect key="frame" x="35" y="396" width="250" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="creditos_button"/>
+                                <connections>
+                                    <segue destination="4xw-4o-lfT" kind="show" id="LG4-rT-fQD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPL-bp-zBX">
+                                <rect key="frame" x="35" y="288" width="250" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="material_de_estudio_button"/>
+                                <connections>
+                                    <segue destination="Y45-EP-F24" kind="show" id="XzN-TP-8pO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tob-3O-4HY">
+                                <rect key="frame" x="35" y="180" width="250" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="evaluacion_button"/>
+                                <connections>
+                                    <segue destination="KwI-ai-DJB" kind="show" id="5gh-Is-xh8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEI-Hl-Au4">
+                                <rect key="frame" x="35" y="72" width="250" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="practica_button"/>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="Ik1-Bh-Vl3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Jojo Vectores" id="1Xt-5o-qTU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xer-Ld-gfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="58.125" y="757.3943661971831"/>
+        </scene>
+        <!--Evaluacion View Controller-->
+        <scene sceneID="3vZ-rW-hN6">
+            <objects>
+                <viewController id="KwI-ai-DJB" customClass="EvaluacionViewController" customModule="Jojo_Vectores" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mui-Bv-I6Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="kRL-Jm-JaY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mMX-QR-hjg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NAO-Cy-jNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-939" y="1561"/>
+        </scene>
+        <!--Material View Controller-->
+        <scene sceneID="ChE-Hn-Ee1">
+            <objects>
+                <viewController id="Y45-EP-F24" customClass="MaterialViewController" customModule="Jojo_Vectores" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="o6x-bD-bd1"/>
+                        <viewControllerLayoutGuide type="bottom" id="57E-xj-J7N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vVu-Tv-QeK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7UI-Zc-gVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="107" y="1605"/>
+        </scene>
+        <!--Credits View Controller-->
+        <scene sceneID="oNS-vf-th1">
+            <objects>
+                <viewController id="4xw-4o-lfT" customClass="CreditsViewController" customModule="Jojo_Vectores" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="waA-oT-zg8"/>
+                        <viewControllerLayoutGuide type="bottom" id="DsC-Fk-GsG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cBr-fp-gRV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m4M-A3-LcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="853" y="1230"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ug5-R5-ObP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cr2-zM-NUX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MfE-BZ-Uj3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="n75-lX-Z1A" kind="relationship" relationship="rootViewController" id="cMO-UA-Ral"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HbF-fh-khT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-939.375" y="757.3943661971831"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="creditos_button" width="324" height="164"/>
+        <image name="evaluacion_button" width="324" height="164"/>
+        <image name="material_de_estudio_button" width="324" height="162"/>
+        <image name="practica_button" width="324" height="164"/>
+    </resources>
 </document>
