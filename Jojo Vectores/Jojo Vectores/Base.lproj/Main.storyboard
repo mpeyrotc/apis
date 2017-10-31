@@ -289,10 +289,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="sAX-g5-sD3">
-                                <rect key="frame" x="16" y="72" width="288" height="476"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="sAX-g5-sD3">
+                                <rect key="frame" x="16" y="74" width="288" height="476"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="476" id="Hzn-AN-rgC"/>
+                                </constraints>
                                 <string key="text">Jojo Vectores ha sido desarrollado por estudiantes del Tecnológico de Monterrey durante el semestre Agosto-Diciembre de 2017, como parte del curso de Administración de Proyectos de Ingeniería de Software y asesorados por la maestra Jakeline Marcos.
 
 Desarrolladores:
@@ -307,6 +309,11 @@ Jojo Vectores se distribuye como está de manera gratuita y se prohíbe su distr
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sAX-g5-sD3" firstAttribute="leading" secondItem="cBr-fp-gRV" secondAttribute="leadingMargin" id="ERH-Rv-P7n"/>
+                            <constraint firstItem="sAX-g5-sD3" firstAttribute="top" secondItem="waA-oT-zg8" secondAttribute="bottom" constant="10" id="viu-nE-hxa"/>
+                            <constraint firstItem="sAX-g5-sD3" firstAttribute="trailing" secondItem="cBr-fp-gRV" secondAttribute="trailingMargin" id="vt1-yF-EEu"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4M-A3-LcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
