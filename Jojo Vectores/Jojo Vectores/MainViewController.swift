@@ -8,7 +8,10 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, RestoreQuestionState {
+    
+    var currentQuestionNumber = -1
+    var currentQuestionsAnswered = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,5 +31,20 @@ class MainViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         navigationItem.title = "Atrás"
+        
+        if segue.identifier == "evaluation" {
+            let targetView = segue.destination as! EvaluacionViewController
+            targetView.delegate = self
+            
+            targetView.currentQuestion = currentQuestionNumber
+            targetView.answered_questions = currentQuestionsAnswered
+        }
+    }
+    
+    // MARK: - RestoreQuestionState
+    
+    func setValues(questionIndex: Int, questionsAnswered: Int){
+        self.currentQuestionNumber = questionIndex
+        self.currentQuestionsAnswered = questionsAnswered
     }
 }

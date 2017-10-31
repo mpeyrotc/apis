@@ -8,16 +8,27 @@
 
 import UIKit
 
+protocol RestoreQuestionState {
+    func setValues(questionIndex: Int, questionsAnswered: Int)
+}
+
 class EvaluacionViewController: UIViewController {
     @IBOutlet weak var questionTextArea: UITextView!
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var withoutHelpButton: UIButton!
     @IBOutlet weak var withHelpButton: UIButton!
+    @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
     
     var questions: NSArray!
     var currentQuestion = -1
     var currentAnswer: Double!
+    
+    var delegate:RestoreQuestionState?
+    
+    var num_questions: Int!
+    var answered_questions: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +42,17 @@ class EvaluacionViewController: UIViewController {
         
         if (currentQuestion == -1) {
             submitButton.isEnabled = false
+            progressBar.progress = 0.0
+            answered_questions = 0
+        } else {
+            showQuestion(currentQuestion: currentQuestion)
         }
+        
+        UserDefaults.standard.synchronize()
+        
+        num_questions = UserDefaults.standard.integer(forKey: "num_questions")
+        progressLabel.text = String(answered_questions) + "/" + String(num_questions)
+        progressBar.progress = Float(answered_questions) / Float(num_questions!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,8 +76,12 @@ class EvaluacionViewController: UIViewController {
         return true
     }
     
-    @IBAction func displayNewQuestion(_ sender: UIButton) {
+    func createQuestion() {
         currentQuestion = Int(arc4random_uniform(UInt32(questions.count)))
+        showQuestion(currentQuestion: currentQuestion)
+    }
+    
+    func showQuestion(currentQuestion: Int) {
         let dict = questions[currentQuestion] as! NSDictionary
         
         // Create new question
@@ -73,7 +98,7 @@ class EvaluacionViewController: UIViewController {
             currentAnswer = 2
             break
         case "THREE":
-            currentAnswer = 1
+            currentAnswer = 3
             break
         default:
             // nothing
@@ -83,6 +108,12 @@ class EvaluacionViewController: UIViewController {
         // set question visible to the user
         questionTextArea.text = question
         answerTextField.text = ""
+        
+        delegate?.setValues(questionIndex: currentQuestion, questionsAnswered: answered_questions)
+    }
+    
+    @IBAction func displayNewQuestion(_ sender: UIButton) {
+        createQuestion()
     }
 
     @IBAction func submitAnswer(_ sender: UIButton) {
@@ -112,7 +143,25 @@ class EvaluacionViewController: UIViewController {
             
             alerta.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             present(alerta, animated: true, completion: nil)
+            
+            if isCorrect {
+                answered_questions! += 1
+                progressBar.progress = Float(answered_questions) / Float(num_questions!)
+                
+                progressLabel.text = String(answered_questions) + "/" + String(num_questions)
+            
+                if (answered_questions != num_questions) {
+                    createQuestion()
+                }
+            }
         }
+    }
+    
+    @IBAction func startAgain(_ sender: UIButton) {
+        answered_questions = 0
+        progressLabel.text = String(answered_questions) + "/" + String(num_questions)
+        progressBar.progress = 0.0
+        createQuestion()
     }
     
     @IBAction func hideKeyboard() {

@@ -20,18 +20,18 @@
 			<key>Key</key>
 			<string>num_questions</string>
 			<key>DefaultValue</key>
-			<string>3</string>
+			<string>4</string>
 			<key>Titles</key>
 			<array>
-				<string>3</string>
 				<string>4</string>
-				<string>5</string>
+				<string>6</string>
+				<string>8</string>
 			</array>
 			<key>Values</key>
 			<array>
-				<string>3</string>
 				<string>4</string>
-				<string>5</string>
+				<string>6</string>
+				<string>8</string>
 			</array>
 		</dict>
 		<dict>
