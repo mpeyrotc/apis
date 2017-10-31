@@ -22,6 +22,7 @@
 		2835059C1F9ED1740058CCE5 /* MaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835059B1F9ED1740058CCE5 /* MaterialViewController.swift */; };
 		2835059E1F9ED19C0058CCE5 /* EvaluacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835059D1F9ED19C0058CCE5 /* EvaluacionViewController.swift */; };
 		283505A01F9ED4C80058CCE5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2835059F1F9ED4C80058CCE5 /* Settings.bundle */; };
+		287B62411FA7FC7C003FF500 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 287B62401FA7FC7C003FF500 /* Property List.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		2835059B1F9ED1740058CCE5 /* MaterialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialViewController.swift; sourceTree = "<group>"; };
 		2835059D1F9ED19C0058CCE5 /* EvaluacionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluacionViewController.swift; sourceTree = "<group>"; };
 		2835059F1F9ED4C80058CCE5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		287B62401FA7FC7C003FF500 /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				283505751F9E4A070058CCE5 /* Info.plist */,
 				283505971F9E5C310058CCE5 /* MainViewController.swift */,
 				283505991F9ECD140058CCE5 /* CreditsViewController.swift */,
+				287B62401FA7FC7C003FF500 /* Property List.plist */,
 			);
 			path = "Jojo Vectores";
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2835056F1F9E4A070058CCE5 /* Main.storyboard in Resources */,
+				287B62411FA7FC7C003FF500 /* Property List.plist in Resources */,
 				283505661F9E4A070058CCE5 /* GameScene.sks in Resources */,
 				283505711F9E4A070058CCE5 /* Assets.xcassets in Resources */,
 				283505741F9E4A070058CCE5 /* LaunchScreen.storyboard in Resources */,
@@ -539,6 +543,7 @@
 				283505901F9E4A070058CCE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		283505911F9E4A070058CCE5 /* Build configuration list for PBXNativeTarget "Jojo VectoresTests" */ = {
 			isa = XCConfigurationList;
@@ -547,6 +552,7 @@
 				283505931F9E4A070058CCE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		283505941F9E4A070058CCE5 /* Build configuration list for PBXNativeTarget "Jojo VectoresUITests" */ = {
 			isa = XCConfigurationList;
@@ -555,6 +561,7 @@
 				283505961F9E4A070058CCE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
