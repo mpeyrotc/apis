@@ -66,6 +66,10 @@ class GameScene: SKScene {
         addVectorNow = true
     }
     
+    func removeVector() {
+        children[children.count - 1].removeFromParent()
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { self.touchDown(atPoint: t.location(in: self)) }
     }

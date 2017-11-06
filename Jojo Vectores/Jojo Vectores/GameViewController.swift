@@ -13,6 +13,9 @@ import GameplayKit
 class GameViewController: UIViewController {
     var realScene = GameScene()
 
+    @IBOutlet weak var magnitudeTextField: UITextField!
+    @IBOutlet weak var directionTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,7 +49,7 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func removeVector(_ sender: UIBarButtonItem) {
-        
+        realScene.removeVector()
     }
     
     override var shouldAutorotate: Bool {
