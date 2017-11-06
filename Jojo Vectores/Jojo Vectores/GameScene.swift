@@ -13,6 +13,7 @@ class GameScene: SKScene {
     var path = UIBezierPath()
     var initialPos = CGPoint()
     var shape = SKShapeNode()
+    var addVectorNow = false
     
     override func sceneDidLoad() {
     }
@@ -22,36 +23,47 @@ class GameScene: SKScene {
     }
     
     func touchDown(atPoint pos : CGPoint) {
-        initialPos = pos
-        shape = SKShapeNode()
+        if addVectorNow {
+            initialPos = pos
+            shape = SKShapeNode()
+        }
     }
     
     func touchMoved(toPoint pos : CGPoint) {
-        path.removeAllPoints()
-        shape.removeFromParent()
-        shape = SKShapeNode()
-        path.move(to: initialPos)
-        path.addLine(to: pos)
-        
-        shape.path = path.cgPath
-        shape.position = CGPoint(x: frame.midX, y: frame.midY)
-        shape.strokeColor = UIColor.blue
-        shape.lineWidth = 10
-        addChild(shape)
+        if addVectorNow {
+            path.removeAllPoints()
+            shape.removeFromParent()
+            shape = SKShapeNode()
+            path.move(to: initialPos)
+            path.addLine(to: pos)
+            
+            shape.path = path.cgPath
+            shape.position = CGPoint(x: frame.midX, y: frame.midY)
+            shape.strokeColor = UIColor.blue
+            shape.lineWidth = 10
+            addChild(shape)
+        }
     }
     
     func touchUp(atPoint pos : CGPoint) {
-        path.removeAllPoints()
-        shape.removeFromParent()
-        shape = SKShapeNode()
-        path.move(to: initialPos)
-        path.addLine(to: pos)
-        
-        shape.path = path.cgPath
-        shape.position = CGPoint(x: frame.midX, y: frame.midY)
-        shape.strokeColor = UIColor.blue
-        shape.lineWidth = 10
-        addChild(shape)
+        if addVectorNow {
+            path.removeAllPoints()
+            shape.removeFromParent()
+            shape = SKShapeNode()
+            path.move(to: initialPos)
+            path.addLine(to: pos)
+            
+            shape.path = path.cgPath
+            shape.position = CGPoint(x: frame.midX, y: frame.midY)
+            shape.strokeColor = UIColor.blue
+            shape.lineWidth = 10
+            addChild(shape)
+            addVectorNow = false
+        }
+    }
+    
+    func addVector() {
+        addVectorNow = true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

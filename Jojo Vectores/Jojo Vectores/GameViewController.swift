@@ -11,6 +11,7 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+    var realScene = GameScene()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ class GameViewController: UIViewController {
                 
                 // Set the scale mode to scale to fit the window
                 sceneNode.scaleMode = .aspectFill
-                
+                realScene = sceneNode
                 // Present the scene
                 if let view = self.view as! SKView? {
                     view.presentScene(sceneNode)
@@ -40,6 +41,14 @@ class GameViewController: UIViewController {
         navigationItem.title = "Práctica"
     }
 
+    @IBAction func addVector(_ sender: UIBarButtonItem) {
+        realScene.addVector()
+    }
+    
+    @IBAction func removeVector(_ sender: UIBarButtonItem) {
+        
+    }
+    
     override var shouldAutorotate: Bool {
         return true
     }
