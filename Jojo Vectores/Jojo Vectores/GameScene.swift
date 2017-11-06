@@ -9,13 +9,21 @@
 import SpriteKit
 import GameplayKit
 
+class VectorEndPoints {
+    var startPoint: CGPoint?
+    var endPoint: CGPoint?
+}
+
 class GameScene: SKScene {
     var path = UIBezierPath()
     var initialPos = CGPoint()
     var shape = SKShapeNode()
     var addVectorNow = false
+    var points = [VectorEndPoints]()
+    var showingComponents = false
     
     override func sceneDidLoad() {
+        
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -26,6 +34,7 @@ class GameScene: SKScene {
         if addVectorNow {
             initialPos = pos
             shape = SKShapeNode()
+            shape.name = "vector"
         }
     }
     
@@ -34,6 +43,7 @@ class GameScene: SKScene {
             path.removeAllPoints()
             shape.removeFromParent()
             shape = SKShapeNode()
+            shape.name = "vector"
             path.move(to: initialPos)
             path.addLine(to: pos)
             
@@ -50,8 +60,14 @@ class GameScene: SKScene {
             path.removeAllPoints()
             shape.removeFromParent()
             shape = SKShapeNode()
+            shape.name = "vector"
             path.move(to: initialPos)
             path.addLine(to: pos)
+            
+            let newPoint = VectorEndPoints()
+            newPoint.startPoint = initialPos
+            newPoint.endPoint = pos
+            points.append(contentsOf: [newPoint])
             
             shape.path = path.cgPath
             shape.position = CGPoint(x: frame.midX, y: frame.midY)
@@ -67,7 +83,57 @@ class GameScene: SKScene {
     }
     
     func removeVector() {
-        children[children.count - 1].removeFromParent()
+        if !children.isEmpty {
+            children[children.count - 1].removeFromParent()
+            _ = points.popLast()
+        }
+    }
+    
+    func showComponents() {
+        if !showingComponents {
+            points.forEach { (vectorPoints) in
+                var path = UIBezierPath()
+                
+                shape = SKShapeNode()
+                shape.name = "component"
+                path.move(to: vectorPoints.startPoint!)
+                var x = CGPoint()
+                x.x = vectorPoints.endPoint!.x
+                x.y = vectorPoints.startPoint!.y
+                path.addLine(to: x)
+                
+                shape.path = path.cgPath
+                shape.position = CGPoint(x: frame.midX, y: frame.midY)
+                shape.strokeColor = UIColor.red
+                shape.lineWidth = 5
+                addChild(shape)
+                
+                path = UIBezierPath()
+                
+                shape = SKShapeNode()
+                shape.name = "component"
+                path.move(to: vectorPoints.startPoint!)
+                var y = CGPoint()
+                y.x = vectorPoints.startPoint!.x
+                y.y = vectorPoints.endPoint!.y
+                path.addLine(to: y)
+                
+                shape.path = path.cgPath
+                shape.position = CGPoint(x: frame.midX, y: frame.midY)
+                shape.strokeColor = UIColor.red
+                shape.lineWidth = 5
+                addChild(shape)
+            }
+            
+            showingComponents = true
+        } else {
+            self.enumerateChildNodes(withName: "component") {
+                node, stop in
+                node.removeFromParent()
+            }
+            
+            showingComponents = false
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

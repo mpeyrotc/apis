@@ -52,6 +52,14 @@ class GameViewController: UIViewController {
         realScene.removeVector()
     }
     
+    @IBAction func showComponents(_ sender: UIButton) {
+        realScene.showComponents()
+    }
+    
+    @IBAction func calculateSum(_ sender: UIButton) {
+        // pendiente
+    }
+    
     override var shouldAutorotate: Bool {
         return true
     }
