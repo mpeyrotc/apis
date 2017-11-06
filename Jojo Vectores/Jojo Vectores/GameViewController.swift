@@ -29,6 +29,8 @@ class GameViewController: UIViewController {
                 // Set the scale mode to scale to fit the window
                 sceneNode.scaleMode = .aspectFill
                 realScene = sceneNode
+                realScene.viewController = self
+                
                 // Present the scene
                 if let view = self.view as! SKView? {
                     view.presentScene(sceneNode)
