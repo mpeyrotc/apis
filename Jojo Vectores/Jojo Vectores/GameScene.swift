@@ -23,6 +23,10 @@ class GameScene: SKScene {
     var points = [VectorEndPoints]()
     var arrows = [SKShapeNode]()
     var showingComponents = false
+    var viewController: GameViewController!
+    var magnitude: Double!
+    var angulo: Double!
+
     
     override func sceneDidLoad() {
         
@@ -47,8 +51,10 @@ class GameScene: SKScene {
             shape = SKShapeNode()
             shape.name = "vector"
             path.move(to: initialPos)
+            //viewController.magnitudeTextField.text = String(initialPos)
             path.addLine(to: pos)
-            
+            print("Magnitude: " + String(getMagnitude(toPoint: pos)))
+            print("Angle: " + String(getAngle(toPoint: pos)))
             shape.path = path.cgPath
             shape.position = CGPoint(x: frame.midX, y: frame.midY)
             shape.strokeColor = UIColor.blue
@@ -148,6 +154,7 @@ class GameScene: SKScene {
         }
     }
     
+
     func createArrowTip(start: CGPoint, end: CGPoint) -> UIBezierPath {
         let pendienteOriginal = (end.y - start.y) / (end.x - start.x)
         let pendientePerpendicular = -1 / pendienteOriginal
@@ -167,6 +174,28 @@ class GameScene: SKScene {
         path.addLine(to: CGPoint(x: dx, y: dy))
         path.close()
         return path
+    }
+    
+    func getMagnitude(toPoint pos: CGPoint) -> Double {
+        let x1 = Double(initialPos.x)
+        let y1 = Double(initialPos.y)
+        let x2 = Double(pos.x)
+        let y2 = Double(pos.y)
+        return sqrt(pow(x1-x2, 2)+pow(y1-y2, 2))
+    }
+    
+    func getAngle(toPoint pos: CGPoint) -> Double {
+        let x1 = Double(initialPos.x)
+        let y1 = Double(initialPos.y)
+        let x2 = Double(pos.x)
+        let y2 = Double(pos.y)
+        var angle = atan2((y2-y1), (x2-x1))
+        angle = angle * 360 / (3.14 * 2)
+        if angle < 0{
+            let diff = angle + 180
+            angle = 180 + diff
+        }
+        return angle
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
