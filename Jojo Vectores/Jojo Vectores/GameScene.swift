@@ -42,7 +42,13 @@ class GameScene: SKScene {
     var vectors = [SKShapeNode]() // holds each line that represents a vector visually to the user.
     
     override func sceneDidLoad() {
-        // not used, called before content is shown to the user
+        //Checar grid para diferentes modelos
+        let w = ceil(UIScreen.main.bounds.width / 20.0)
+        let h = ceil(UIScreen.main.bounds.height / 20.0)
+        if let grid = Grid(blockSize: 40.0, rows: Int(h), cols: Int(w)){
+            grid.position = CGPoint (x:frame.midX, y:frame.midY)
+            addChild(grid)
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {
