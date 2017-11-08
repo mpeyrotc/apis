@@ -18,8 +18,10 @@ class GameScene: SKScene {
     var path = UIBezierPath()
     var initialPos = CGPoint()
     var shape = SKShapeNode()
+    var triangle = GKTriangle()
     var addVectorNow = false
     var points = [VectorEndPoints]()
+    var arrows = [SKShapeNode]()
     var showingComponents = false
     
     override func sceneDidLoad() {
@@ -75,6 +77,16 @@ class GameScene: SKScene {
             shape.lineWidth = 10
             addChild(shape)
             addVectorNow = false
+            
+            path = createArrowTip(start: initialPos, end: pos)
+            shape = SKShapeNode()
+            shape.name = "arrow"
+            
+            shape.path = path.cgPath
+            shape.strokeColor = UIColor.orange
+            shape.fillColor = UIColor.orange
+            shape.lineWidth = 5
+            addChild(shape)
         }
     }
     
@@ -134,6 +146,27 @@ class GameScene: SKScene {
             
             showingComponents = false
         }
+    }
+    
+    func createArrowTip(start: CGPoint, end: CGPoint) -> UIBezierPath {
+        let pendienteOriginal = (end.y - start.y) / (end.x - start.x)
+        let pendientePerpendicular = -1 / pendienteOriginal
+        let bNueva = end.y - pendientePerpendicular * end.x
+        
+        let cx = end.x - 12
+        let cy = pendientePerpendicular * cx + bNueva
+        let dx = end.x + 12
+        let dy = pendientePerpendicular * dx + bNueva
+        let angle = atan2(end.y - start.y, end.x - start.x)
+        let ex = end.x + 40 * cos(angle)
+        let ey = end.y + 40 * sin(angle)
+        
+        path = UIBezierPath()
+        path.move(to: CGPoint(x: cx, y: cy))
+        path.addLine(to: CGPoint(x: ex, y: ey))
+        path.addLine(to: CGPoint(x: dx, y: dy))
+        path.close()
+        return path
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
