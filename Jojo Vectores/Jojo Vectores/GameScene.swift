@@ -93,6 +93,7 @@ class GameScene: SKScene {
             shape.fillColor = UIColor.orange
             shape.lineWidth = 5
             addChild(shape)
+            arrows.append(shape)
         }
     }
     
@@ -158,15 +159,20 @@ class GameScene: SKScene {
     func createArrowTip(start: CGPoint, end: CGPoint) -> UIBezierPath {
         let pendienteOriginal = (end.y - start.y) / (end.x - start.x)
         let pendientePerpendicular = -1 / pendienteOriginal
-        let bNueva = end.y - pendientePerpendicular * end.x
-        
-        let cx = end.x - 12
-        let cy = pendientePerpendicular * cx + bNueva
-        let dx = end.x + 12
-        let dy = pendientePerpendicular * dx + bNueva
         let angle = atan2(end.y - start.y, end.x - start.x)
-        let ex = end.x + 40 * cos(angle)
-        let ey = end.y + 40 * sin(angle)
+        var phasedPoint = CGPoint()
+        
+        phasedPoint.x = end.x - 40 * cos(angle)
+        phasedPoint.y = end.y - 40 * sin(angle)
+        
+        let bNueva = phasedPoint.y - pendientePerpendicular * phasedPoint.x
+        
+        let cx = phasedPoint.x - 12
+        let cy = pendientePerpendicular * cx + bNueva
+        let dx = phasedPoint.x + 12
+        let dy = pendientePerpendicular * dx + bNueva
+        let ex = phasedPoint.x + 40 * cos(angle)
+        let ey = phasedPoint.y + 40 * sin(angle)
         
         path = UIBezierPath()
         path.move(to: CGPoint(x: cx, y: cy))
