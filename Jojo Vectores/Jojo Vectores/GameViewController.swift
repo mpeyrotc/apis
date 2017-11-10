@@ -58,13 +58,17 @@ class GameViewController: UIViewController {
         realScene.removeVector()
     }
     
+    @IBAction func moveVector(_ sender: UIButton) {
+        realScene.moveVector()
+    }
 
     @IBAction func showComponents(_ sender: UIButton) {
         realScene.showComponents()
     }
     
+    
     @IBAction func calculateSum(_ sender: UIButton) {
-        // pendiente
+        realScene.sumVectors()
     }
 
     func setConstraints(){

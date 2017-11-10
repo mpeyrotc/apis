@@ -32,9 +32,14 @@ class GameScene: SKScene {
     var triangle = GKTriangle() // holds the object (arrow tip) of the newly created vector.
     var addVectorNow = false // flag the application that the user wants to create a new vector.
     var showingComponents = false // flag the application that the user wants to show the components of the vectors.
+    var showingSum = false // flag the application that the sum of the vectors is being shown
     var viewController: GameViewController!
     var magnitude: Double! // magnitude of the new vector being created.
     var angulo: Double! // angle of the new vector being created, with respect to the horizontal.
+    var movingVector = false
+    var lastVector = SKShapeNode()
+    var lastArrow = SKShapeNode()
+    var lastVectorPoints = VectorEndPoints()
     
     // helper data structures
     var points = [VectorEndPoints]() // holds the points that conform each vector drawn by the user.
@@ -62,6 +67,17 @@ class GameScene: SKScene {
             shape = SKShapeNode()
             shape.name = "vector"
         }
+        
+        if movingVector {
+            shape = SKShapeNode()
+            shape.name = "vector"
+            
+            initialPos = pos
+            
+            lastVector = vectors.popLast()!
+            lastArrow = arrows.popLast()!
+            lastVectorPoints = points.popLast()!
+        }
     }
     
     // Callback function that is called each time the user moves 
@@ -69,27 +85,100 @@ class GameScene: SKScene {
     func touchMoved(toPoint pos : CGPoint) {
         if addVectorNow {
             // remove the previous vector added to avoid seeing the path made by the user.
-            vectors.popLast()?.removeFromParent()
-            arrows.popLast()?.removeFromParent()
-            createVectorBody(pos: pos)
-            createVectorTip(pos: pos)
+            lastVector.removeFromParent()
+            lastArrow.removeFromParent()
+            createVectorBody(pos: pos, color: UIColor.blue)
+            createVectorTip(pos: pos, color: UIColor.blue)
+        }
+        
+        if movingVector {
+            lastVector.removeFromParent()
+            lastArrow.removeFromParent()
+            
+            let componentX = pos.x - initialPos.x
+            let componentY = pos.y - initialPos.y
+            
+            var initialPoint = CGPoint()
+            initialPoint.x = (lastVectorPoints.startPoint?.x)! + componentX
+            initialPoint.y = (lastVectorPoints.startPoint?.y)! + componentY
+            
+            var endPoint = CGPoint()
+            endPoint.x = (lastVectorPoints.endPoint?.x)! + componentX
+            endPoint.y = (lastVectorPoints.endPoint?.y)! + componentY
+            
+            initialPos = initialPoint
+            
+            let newPoints = VectorEndPoints()
+            newPoints.startPoint = initialPoint
+            newPoints.endPoint = endPoint
+            
+            lastVectorPoints = newPoints
+            
+            path.removeAllPoints()
+            shape = SKShapeNode()
+            shape.name = "vector"
+            path.move(to: initialPos)
+            //viewController.magnitudeTextField.text = String(initialPos)
+            path.addLine(to: endPoint)
+            //print("Magnitude: " + String(getMagnitude(toPoint: pos)))
+            //print("Angle: " + String(getAngle(toPoint: pos)))
+            shape.path = path.cgPath
+            shape.position = CGPoint(x: frame.midX, y: frame.midY)
+            shape.strokeColor = UIColor.blue
+            shape.lineWidth = 10
+            addChild(shape)
+            lastVector = shape
+            
+            path = createArrowTip(start: initialPos, end: endPoint)
+            shape = SKShapeNode()
+            shape.name = "arrow"
+            
+            shape.path = path.cgPath
+            shape.strokeColor = UIColor.blue
+            shape.fillColor = UIColor.blue
+            shape.lineWidth = 5
+            addChild(shape)
+            lastArrow = shape
+            
+            initialPos = pos
         }
     }
     
     // Callback function that is called each time the user removes his finger from the screen.
     func touchUp(atPoint pos : CGPoint) {
         if addVectorNow {
-            createVectorBody(pos: pos)
-            createVectorTip(pos: pos)
-            
             // save the points of the newly created vector.
             let newPoint = VectorEndPoints()
             newPoint.startPoint = initialPos
             newPoint.endPoint = pos
             points.append(contentsOf: [newPoint])
+            vectors.append(lastVector)
+            arrows.append(lastArrow)
             
             // set the new vector flag to off, since the vector has been created by the user.
             addVectorNow = false
+            
+            lastVector = SKShapeNode()
+            lastArrow = SKShapeNode()
+            lastVectorPoints = VectorEndPoints()
+            
+            print(vectors.count, arrows.count, points.count)
+        }
+        
+        if movingVector {
+            let newPoints = lastVectorPoints
+            initialPos = (newPoints.startPoint)!
+            points.append(newPoints)
+            
+            
+            vectors.append(lastVector)
+            arrows.append(lastArrow)
+            
+            lastVector = SKShapeNode()
+            lastArrow = SKShapeNode()
+            lastVectorPoints = VectorEndPoints()
+            
+            movingVector = false
         }
     }
     
@@ -143,7 +232,7 @@ class GameScene: SKScene {
     }
     
     // shows in the screen the line of the vector.
-    func createVectorBody(pos: CGPoint) {
+    func createVectorBody(pos: CGPoint, color: UIColor) {
         path.removeAllPoints()
         shape = SKShapeNode()
         shape.name = "vector"
@@ -154,25 +243,25 @@ class GameScene: SKScene {
         //print("Angle: " + String(getAngle(toPoint: pos)))
         shape.path = path.cgPath
         shape.position = CGPoint(x: frame.midX, y: frame.midY)
-        shape.strokeColor = UIColor.blue
+        shape.strokeColor = color
         shape.lineWidth = 10
         addChild(shape)
-        vectors.append(shape)
+        lastVector = shape
     }
     
     // shows in the screen the arrow tip of the vector.
-    func createVectorTip(pos: CGPoint) {
+    func createVectorTip(pos: CGPoint, color: UIColor) {
         path = createArrowTip(start: initialPos, end: pos)
         shape = SKShapeNode()
         shape.name = "arrow"
         
         shape.path = path.cgPath
-        shape.strokeColor = UIColor.blue
-        shape.fillColor = UIColor.blue
+        shape.strokeColor = color
+        shape.fillColor = color
         shape.lineWidth = 5
-        addChild(shape)
         
-        arrows.append(shape)
+        addChild(shape)
+        lastArrow = shape
     }
     
     // Returns the magnitude of the new vector
@@ -267,6 +356,10 @@ class GameScene: SKScene {
         addVectorNow = true
     }
     
+    func moveVector() {
+        movingVector = true
+    }
+    
     // Removes the last vector added by the user, can be called several times.
     func removeVector() {
         if !vectors.isEmpty {
@@ -277,6 +370,54 @@ class GameScene: SKScene {
             a.removeFromParent()
             
             _ = points.popLast()
+        }
+    }
+    
+    func sumVectors() {
+        if !showingSum && points.count > 0 {
+            var componentX = CGFloat(0)
+            var componentY = CGFloat(0)
+            
+            initialPos = points[0].startPoint!
+            
+            points.forEach { p in
+                componentX += p.endPoint!.x - p.startPoint!.x
+                componentY += p.endPoint!.y - p.startPoint!.y
+            }
+            
+            shape = SKShapeNode()
+            shape.name = "sum_vector"
+            var point = CGPoint()
+            point.x = initialPos.x + componentX
+            point.y = initialPos.y + componentY
+            
+            path = UIBezierPath()
+            path.move(to: initialPos)
+            path.addLine(to: point)
+            shape.path = path.cgPath
+            shape.position = CGPoint(x: frame.midX, y: frame.midY)
+            shape.strokeColor = UIColor.green
+            shape.lineWidth = 10
+            addChild(shape)
+
+            path = createArrowTip(start: initialPos, end: point)
+            shape = SKShapeNode()
+            shape.name = "sum_vector"
+            
+            shape.path = path.cgPath
+            shape.strokeColor = UIColor.green
+            shape.fillColor = UIColor.green
+            shape.lineWidth = 5
+            addChild(shape)
+            
+            showingSum = true
+        } else {
+            self.enumerateChildNodes(withName: "sum_vector") {
+                node, stop in
+                node.removeFromParent()
+            }
+            
+            showingSum = false
         }
     }
 }
