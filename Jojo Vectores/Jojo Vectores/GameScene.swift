@@ -36,9 +36,9 @@ class GameScene: SKScene {
     var viewController: GameViewController!
     var magnitude: Double! // magnitude of the new vector being created.
     var angulo: Double! // angle of the new vector being created, with respect to the horizontal.
-    var movingVector = false
-    var lastVector = SKShapeNode()
-    var lastArrow = SKShapeNode()
+    var movingVector = false // flag the application that the user wants to move the last vector that was added.
+    var lastVector = SKShapeNode() // holds the vector on which an action is being made (create or move)
+    var lastArrow = SKShapeNode() // holds the vector tip on which an action is being made (create or move)
     var lastVectorPoints = VectorEndPoints()
     
     // helper data structures
@@ -69,11 +69,12 @@ class GameScene: SKScene {
         }
         
         if movingVector {
+            // reset control variables
             shape = SKShapeNode()
             shape.name = "vector"
-            
             initialPos = pos
             
+            // get the last vector added and remove it from the control stacks
             lastVector = vectors.popLast()!
             lastArrow = arrows.popLast()!
             lastVectorPoints = points.popLast()!
@@ -92,36 +93,37 @@ class GameScene: SKScene {
         }
         
         if movingVector {
+            // erase the vector being moved from the canvas
             lastVector.removeFromParent()
             lastArrow.removeFromParent()
             
+            // calculate displacement vectors
             let componentX = pos.x - initialPos.x
             let componentY = pos.y - initialPos.y
             
+            // move the start point of the vector to its new position
             var initialPoint = CGPoint()
             initialPoint.x = (lastVectorPoints.startPoint?.x)! + componentX
             initialPoint.y = (lastVectorPoints.startPoint?.y)! + componentY
-            
+            // move the end point of the vector to its new position
             var endPoint = CGPoint()
             endPoint.x = (lastVectorPoints.endPoint?.x)! + componentX
             endPoint.y = (lastVectorPoints.endPoint?.y)! + componentY
-            
+            // set the vector initial position to its updated start point
             initialPos = initialPoint
             
             let newPoints = VectorEndPoints()
             newPoints.startPoint = initialPoint
             newPoints.endPoint = endPoint
-            
+            // save the new vector coordinates
             lastVectorPoints = newPoints
             
+            // draw the vector body and save a copy
             path.removeAllPoints()
             shape = SKShapeNode()
             shape.name = "vector"
             path.move(to: initialPos)
-            //viewController.magnitudeTextField.text = String(initialPos)
             path.addLine(to: endPoint)
-            //print("Magnitude: " + String(getMagnitude(toPoint: pos)))
-            //print("Angle: " + String(getAngle(toPoint: pos)))
             shape.path = path.cgPath
             shape.position = CGPoint(x: frame.midX, y: frame.midY)
             shape.strokeColor = UIColor.blue
@@ -129,10 +131,10 @@ class GameScene: SKScene {
             addChild(shape)
             lastVector = shape
             
+            // draw the vector tip and save a copy
             path = createArrowTip(start: initialPos, end: endPoint)
             shape = SKShapeNode()
             shape.name = "arrow"
-            
             shape.path = path.cgPath
             shape.strokeColor = UIColor.blue
             shape.fillColor = UIColor.blue
@@ -140,6 +142,7 @@ class GameScene: SKScene {
             addChild(shape)
             lastArrow = shape
             
+            // reset the initial position to the point where the user currently has his finger
             initialPos = pos
         }
     }
@@ -158,26 +161,25 @@ class GameScene: SKScene {
             // set the new vector flag to off, since the vector has been created by the user.
             addVectorNow = false
             
+            // reset temporal variables to avoid affecting the last vector added while doing a new operation.
             lastVector = SKShapeNode()
             lastArrow = SKShapeNode()
             lastVectorPoints = VectorEndPoints()
-            
-            print(vectors.count, arrows.count, points.count)
         }
         
         if movingVector {
+            // add the vector coordinates to the control stack
             let newPoints = lastVectorPoints
             initialPos = (newPoints.startPoint)!
             points.append(newPoints)
-            
-            
+            // add the vector body and tip to the control stacks
             vectors.append(lastVector)
             arrows.append(lastArrow)
-            
+            // reset temporal variables to avoid affecting the last vector added while doing a new operation.
             lastVector = SKShapeNode()
             lastArrow = SKShapeNode()
             lastVectorPoints = VectorEndPoints()
-            
+            // set the move vector flag to off, since the vector has been located successfully to a new position.
             movingVector = false
         }
     }
@@ -373,18 +375,22 @@ class GameScene: SKScene {
         }
     }
     
+    // calculates the sum of the vectors and puts a green vector on screen
+    // which represents the sum.
     func sumVectors() {
         if !showingSum && points.count > 0 {
             var componentX = CGFloat(0)
             var componentY = CGFloat(0)
-            
+            // the first vector start position is the one at which the sum vector starts.
             initialPos = points[0].startPoint!
             
+            // add the components x and y for all vectors present in the canvas.
             points.forEach { p in
                 componentX += p.endPoint!.x - p.startPoint!.x
                 componentY += p.endPoint!.y - p.startPoint!.y
             }
             
+            // create the sum vector (body and tip) but don't add them to the control stacks.
             shape = SKShapeNode()
             shape.name = "sum_vector"
             var point = CGPoint()
@@ -412,6 +418,7 @@ class GameScene: SKScene {
             
             showingSum = true
         } else {
+            // if the sum vector is currently being shown, remove it.
             self.enumerateChildNodes(withName: "sum_vector") {
                 node, stop in
                 node.removeFromParent()
