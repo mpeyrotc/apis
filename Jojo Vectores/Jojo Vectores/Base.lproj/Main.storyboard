@@ -117,7 +117,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="A73-lX-ugh" secondAttribute="trailing" id="2bG-BO-kiy"/>
                             <constraint firstItem="ude-ts-bT0" firstAttribute="top" secondItem="Ac4-vX-Drc" secondAttribute="bottom" constant="8" id="7QJ-h2-foK"/>
@@ -131,13 +131,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Componentesbt" destination="BJ4-ge-ZmR" id="aAq-27-paB"/>
                         <outlet property="SumLb" destination="Bko-Dd-ewt" id="FpM-Yh-n1l"/>
                         <outlet property="SumLb2" destination="OhI-cG-kfj" id="dE9-pb-2d1"/>
                         <outlet property="dirLb" destination="NhD-iB-FgO" id="XcT-dp-vfj"/>
                         <outlet property="directionTextField" destination="eNj-f1-Ngj" id="wgK-et-n0J"/>
                         <outlet property="magLb" destination="sQi-PC-SXh" id="qr4-86-Jxk"/>
                         <outlet property="magnitudeTextField" destination="z3r-gb-Wa7" id="iGE-DG-fgI"/>
+                        <outlet property="movebt" destination="Bb6-rF-m0j" id="BeG-E5-DEj"/>
                         <outlet property="stackLb" destination="4h9-ON-gx3" id="5JX-4k-WWO"/>
+                        <outlet property="sumbt" destination="QOP-am-9iS" id="1bg-iE-b4j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -167,28 +170,40 @@
                                     </navigationBar>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEI-Hl-Au4">
                                         <rect key="frame" x="0.0" y="64" width="310" height="108.5"/>
-                                        <state key="normal" image="practica_button"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="Practica">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="BV1-FR-VrT" kind="show" id="Ik1-Bh-Vl3"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tob-3O-4HY">
                                         <rect key="frame" x="0.0" y="192.5" width="310" height="108.5"/>
-                                        <state key="normal" image="evaluacion_button"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="Evaluacion">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="KwI-ai-DJB" kind="show" identifier="evaluation" id="5gh-Is-xh8"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPL-bp-zBX">
                                         <rect key="frame" x="0.0" y="321" width="310" height="108.5"/>
-                                        <state key="normal" image="material_de_estudio_button"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="Material de Estudio">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="Y45-EP-F24" kind="show" id="XzN-TP-8pO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeu-yh-dpB">
                                         <rect key="frame" x="0.0" y="449.5" width="310" height="108.5"/>
-                                        <state key="normal" image="creditos_button"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="Creditos">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="4xw-4o-lfT" kind="show" id="LG4-rT-fQD"/>
                                         </connections>
@@ -210,6 +225,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Jojo Vectores" id="1Xt-5o-qTU"/>
+                    <connections>
+                        <outlet property="CreditosBT" destination="yeu-yh-dpB" id="U8X-8y-MS3"/>
+                        <outlet property="EstudioBT" destination="oPL-bp-zBX" id="29R-tx-Pmu"/>
+                        <outlet property="EvaluacionBT" destination="tob-3O-4HY" id="E2F-lE-2UT"/>
+                        <outlet property="PracticaBT" destination="ZEI-Hl-Au4" id="NBq-xi-mxI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xer-Ld-gfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -454,10 +475,4 @@ Jojo Vectores se distribuye como está de manera gratuita y se prohíbe su distr
             <point key="canvasLocation" x="-939.375" y="757.3943661971831"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="creditos_button" width="324" height="164"/>
-        <image name="evaluacion_button" width="324" height="164"/>
-        <image name="material_de_estudio_button" width="324" height="162"/>
-        <image name="practica_button" width="324" height="164"/>
-    </resources>
 </document>

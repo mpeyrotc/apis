@@ -12,9 +12,17 @@ class MainViewController: UIViewController, RestoreQuestionState {
     
     var currentQuestionNumber = -1
     var currentQuestionsAnswered = 0
+    
+    @IBOutlet weak var PracticaBT: UIButton!
+    @IBOutlet weak var EvaluacionBT: UIButton!
+    @IBOutlet weak var EstudioBT: UIButton!
+    @IBOutlet weak var CreditosBT: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setButtons()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -47,4 +55,35 @@ class MainViewController: UIViewController, RestoreQuestionState {
         self.currentQuestionNumber = questionIndex
         self.currentQuestionsAnswered = questionsAnswered
     }
+    
+    func setButtons(){
+        let practicaColor = UIColor(rgb: 0x81C0E8)
+        PracticaBT.backgroundColor = practicaColor
+        PracticaBT.layer.borderColor = UIColor.black.cgColor
+        PracticaBT.layer.borderWidth = 1.5
+        PracticaBT.layer.cornerRadius = 10
+        PracticaBT.clipsToBounds = true
+        
+        let evaluacionColor = UIColor(rgb: 0xCBEF43)
+        EvaluacionBT.backgroundColor = evaluacionColor
+        EvaluacionBT.layer.borderColor = UIColor.black.cgColor
+        EvaluacionBT.layer.borderWidth = 1.5
+        EvaluacionBT.layer.cornerRadius = 10
+        EvaluacionBT.clipsToBounds = true
+        
+        let estudioColor = UIColor(rgb: 0x76ED47)
+        EstudioBT.backgroundColor = estudioColor
+        EstudioBT.layer.borderColor = UIColor.black.cgColor
+        EstudioBT.layer.borderWidth = 1.5
+        EstudioBT.layer.cornerRadius = 10
+        EstudioBT.clipsToBounds = true
+        
+        let creditosColor = UIColor(rgb: 0xEACDC2)
+        CreditosBT.backgroundColor = creditosColor
+        CreditosBT.layer.borderColor = UIColor.black.cgColor
+        CreditosBT.layer.borderWidth = 1.5
+        CreditosBT.layer.cornerRadius = 10
+        CreditosBT.clipsToBounds = true
+    }
 }
+

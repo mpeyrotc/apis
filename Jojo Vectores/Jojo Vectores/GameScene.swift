@@ -42,6 +42,9 @@ class GameScene: SKScene {
     var lastVector = SKShapeNode() // holds the vector on which an action is being made (create or move)
     var lastArrow = SKShapeNode() // holds the vector tip on which an action is being made (create or move)
     var lastVectorPoints = VectorEndPoints()
+    let vectorColor = UIColor(rgb: 0x72A98F)
+    let vectorSumColor = UIColor(rgb: 0x76ED47)
+    let componentColor = UIColor(rgb: 0x81C0E8)
     
     // helper data structures
     var points = [VectorEndPoints]() // holds the points that conform each vector drawn by the user.
@@ -91,8 +94,8 @@ class GameScene: SKScene {
             // remove the previous vector added to avoid seeing the path made by the user.
             lastVector.removeFromParent()
             lastArrow.removeFromParent()
-            createVectorBody(pos: pos, color: UIColor.blue)
-            createVectorTip(pos: pos, color: UIColor.blue)
+            createVectorBody(pos: pos, color: vectorColor)
+            createVectorTip(pos: pos, color: vectorColor)
         }
         
         if movingVector {
@@ -129,7 +132,7 @@ class GameScene: SKScene {
             path.addLine(to: endPoint)
             shape.path = path.cgPath
             shape.position = CGPoint(x: frame.midX, y: frame.midY)
-            shape.strokeColor = UIColor.blue
+            shape.strokeColor = vectorColor
             shape.lineWidth = 10
             addChild(shape)
             lastVector = shape
@@ -139,8 +142,8 @@ class GameScene: SKScene {
             shape = SKShapeNode()
             shape.name = "arrow"
             shape.path = path.cgPath
-            shape.strokeColor = UIColor.blue
-            shape.fillColor = UIColor.blue
+            shape.strokeColor = vectorColor
+            shape.fillColor = vectorColor
             shape.lineWidth = 5
             addChild(shape)
             lastArrow = shape
@@ -209,7 +212,7 @@ class GameScene: SKScene {
         
         shape.path = path.cgPath
         shape.position = CGPoint(x: frame.midX, y: frame.midY)
-        shape.strokeColor = UIColor.red
+        shape.strokeColor = componentColor
         shape.lineWidth = 5
         addChild(shape)
     }
@@ -420,7 +423,7 @@ class GameScene: SKScene {
             path.addLine(to: point)
             shape.path = path.cgPath
             shape.position = CGPoint(x: frame.midX, y: frame.midY)
-            shape.strokeColor = UIColor.green
+            shape.strokeColor = vectorSumColor
             shape.lineWidth = 10
             addChild(shape)
 
@@ -429,8 +432,8 @@ class GameScene: SKScene {
             shape.name = "sum_vector"
             
             shape.path = path.cgPath
-            shape.strokeColor = UIColor.green
-            shape.fillColor = UIColor.green
+            shape.strokeColor = vectorSumColor
+            shape.fillColor = vectorSumColor
             shape.lineWidth = 5
             addChild(shape)
             
@@ -453,3 +456,22 @@ class GameScene: SKScene {
         }
     }
 }
+
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        assert(red >= 0 && red <= 255, "Invalid red component")
+        assert(green >= 0 && green <= 255, "Invalid green component")
+        assert(blue >= 0 && blue <= 255, "Invalid blue component")
+        
+        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+    }
+    
+    convenience init(rgb: Int) {
+        self.init(
+            red: (rgb >> 16) & 0xFF,
+            green: (rgb >> 8) & 0xFF,
+            blue: rgb & 0xFF
+        )
+    }
+}
+

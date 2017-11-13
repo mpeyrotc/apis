@@ -20,9 +20,14 @@ class GameViewController: UIViewController {
     @IBOutlet weak var stackLb: UIStackView!
     @IBOutlet weak var SumLb: UILabel!
     @IBOutlet weak var SumLb2: UILabel!
+    @IBOutlet weak var Componentesbt: UIButton!
+    @IBOutlet weak var movebt: UIButton!
+    @IBOutlet weak var sumbt: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setButtons()
+        setLabels()
         setConstraints()
         
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
@@ -34,6 +39,8 @@ class GameViewController: UIViewController {
                 
                 // Set the scale mode to scale to fit the window
                 sceneNode.scaleMode = .aspectFill
+                let bckColor = UIColor(rgb: 0x1A1423)
+                sceneNode.backgroundColor = bckColor
                 realScene = sceneNode
                 realScene.controller = self
                 
@@ -157,6 +164,33 @@ class GameViewController: UIViewController {
 
     }
     
+    func setButtons(){
+        let buttonColor = UIColor(rgb: 0x633239)
+        let buttonBckColor = UIColor(rgb: 0xB75D69)
+        Componentesbt.tintColor = buttonColor
+        Componentesbt.backgroundColor = buttonBckColor
+        Componentesbt.layer.cornerRadius = 10
+        Componentesbt.clipsToBounds = true
+        movebt.tintColor = buttonColor
+        movebt.backgroundColor = buttonBckColor
+        movebt.layer.cornerRadius = 10
+        movebt.clipsToBounds = true
+        sumbt.tintColor = buttonColor
+        sumbt.backgroundColor = buttonBckColor
+        sumbt.layer.cornerRadius = 10
+        sumbt.clipsToBounds = true
+    }
+    
+    func setLabels(){
+        let labelColors = UIColor(rgb: 0xEACDC2)
+        magLb.textColor = labelColors
+        dirLb.textColor = labelColors
+        
+        let sumColor = UIColor(rgb: 0xCBEF43)
+        SumLb.textColor = sumColor
+        SumLb2.textColor = sumColor
+    }
+    
     override var shouldAutorotate: Bool {
         return true
     }
@@ -229,5 +263,4 @@ public extension UIDevice {
         default:                                        return identifier
         }
     }
-    
 }
