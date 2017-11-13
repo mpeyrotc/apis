@@ -447,7 +447,8 @@ class GameScene: SKScene {
                 node, stop in
                 node.removeFromParent()
             }
-            
+            self.controller.SumLb.text = "Magnitud:"
+            self.controller.SumLb2.text = "Angulo:"
             showingSum = false
         }
     }
