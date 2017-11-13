@@ -45,6 +45,7 @@ class GameScene: SKScene {
     var points = [VectorEndPoints]() // holds the points that conform each vector drawn by the user.
     var arrows = [SKShapeNode]() // holds each triangle made by the vector to emulate their arrow tip.
     var vectors = [SKShapeNode]() // holds each line that represents a vector visually to the user.
+    var controller: GameViewController!
     
     override func sceneDidLoad() {
         //Checar grid para diferentes modelos
@@ -241,6 +242,10 @@ class GameScene: SKScene {
         path.move(to: initialPos)
         //viewController.magnitudeTextField.text = String(initialPos)
         path.addLine(to: pos)
+        angulo = getAngle(toPoint: pos)
+        magnitude = getMagnitude(toPoint: pos)
+        self.controller.magnitudeTextField.text = String(format: "%.2f", magnitude)
+        self.controller.directionTextField.text = String(format: "%.2f", angulo)
         //print("Magnitude: " + String(getMagnitude(toPoint: pos)))
         //print("Angle: " + String(getAngle(toPoint: pos)))
         shape.path = path.cgPath
@@ -364,6 +369,8 @@ class GameScene: SKScene {
     
     // Removes the last vector added by the user, can be called several times.
     func removeVector() {
+        self.controller.magnitudeTextField.text = "0.0"
+        self.controller.directionTextField.text = "0.0"
         if !vectors.isEmpty {
             let v = vectors.popLast()!
             v.removeFromParent()
