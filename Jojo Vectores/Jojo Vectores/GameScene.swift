@@ -54,8 +54,8 @@ class GameScene: SKScene {
     
     override func sceneDidLoad() {
         //Checar grid para diferentes modelos
-        let w = ceil(UIScreen.main.bounds.width / 20.0)
-        let h = ceil(UIScreen.main.bounds.height / 20.0)
+        let w = ceil(UIScreen.main.bounds.width / 10.0)
+        let h = ceil(UIScreen.main.bounds.height / 10.0)
         if let grid = Grid(blockSize: 40.0, rows: Int(h), cols: Int(w)){
             grid.position = CGPoint (x:frame.midX, y:frame.midY)
             addChild(grid)

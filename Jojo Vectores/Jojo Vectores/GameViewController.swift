@@ -208,8 +208,11 @@ class GameViewController: UIViewController {
         dirLb.textColor = labelColors
         
         let sumColor = UIColor(rgb: 0xCBEF43)
+        let sumBckColor = UIColor(rgb: 0x1A1423)
         SumLb.textColor = sumColor
+        SumLb.backgroundColor = sumBckColor
         SumLb2.textColor = sumColor
+        SumLb2.backgroundColor = sumBckColor
     }
     
     override var shouldAutorotate: Bool {
