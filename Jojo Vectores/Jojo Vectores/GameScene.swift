@@ -36,6 +36,8 @@ class GameScene: SKScene {
     var viewController: GameViewController!
     var magnitude: Double! // magnitude of the new vector being created.
     var angulo: Double! // angle of the new vector being created, with respect to the horizontal.
+    var sumMag: Double! // magnitude of the resulting vector.
+    var sumAng: Double! // angle of the resulting vector.
     var movingVector = false // flag the application that the user wants to move the last vector that was added.
     var lastVector = SKShapeNode() // holds the vector on which an action is being made (create or move)
     var lastArrow = SKShapeNode() // holds the vector tip on which an action is being made (create or move)
@@ -433,6 +435,12 @@ class GameScene: SKScene {
             addChild(shape)
             
             showingSum = true
+            
+            sumMag = getMagnitude(toPoint: point)
+            sumAng = getAngle(toPoint: point)
+            
+            self.controller.SumLb.text = "Magnitud: " + String(format: "%.2f", sumMag)
+            self.controller.SumLb2.text = "Angulo: " + String(format: "%.2f", sumAng)
         } else {
             // if the sum vector is currently being shown, remove it.
             self.enumerateChildNodes(withName: "sum_vector") {

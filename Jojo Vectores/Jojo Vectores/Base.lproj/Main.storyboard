@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Cr2-zM-NUX">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Cr2-zM-NUX">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,7 +33,7 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="oHP-AL-8tq">
                                         <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="z3r-gb-Wa7">
-                                            <rect key="frame" x="44" y="7" width="25" height="30"/>
+                                            <rect key="frame" x="38.5" y="7" width="25" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -42,7 +42,7 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="Mnp-1A-yDc">
                                         <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="eNj-f1-Ngj">
-                                            <rect key="frame" x="79" y="7" width="25" height="30"/>
+                                            <rect key="frame" x="63.5" y="7" width="25" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -73,34 +73,58 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJ4-ge-ZmR">
-                                <rect key="frame" x="16" y="72" width="96" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Componentes"/>
-                                <connections>
-                                    <action selector="showComponents:" destination="BV1-FR-VrT" eventType="touchUpInside" id="XUm-hk-X6E"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOP-am-9iS">
-                                <rect key="frame" x="265" y="72" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Suma"/>
-                                <connections>
-                                    <action selector="calculateSum:" destination="BV1-FR-VrT" eventType="touchUpInside" id="nBc-hW-nro"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bb6-rF-m0j">
-                                <rect key="frame" x="136" y="72" width="109" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Mover vector"/>
-                                <connections>
-                                    <action selector="moveVector:" destination="BV1-FR-VrT" eventType="touchUpInside" id="kym-OE-3SH"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Ac4-vX-Drc" userLabel="StackTop">
+                                <rect key="frame" x="16" y="72" width="288" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJ4-ge-ZmR">
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="30"/>
+                                        <state key="normal" title="Componentes"/>
+                                        <connections>
+                                            <action selector="showComponents:" destination="BV1-FR-VrT" eventType="touchUpInside" id="XUm-hk-X6E"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bb6-rF-m0j">
+                                        <rect key="frame" x="128" y="0.0" width="91" height="30"/>
+                                        <state key="normal" title="Mover vector"/>
+                                        <connections>
+                                            <action selector="moveVector:" destination="BV1-FR-VrT" eventType="touchUpInside" id="kym-OE-3SH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOP-am-9iS">
+                                        <rect key="frame" x="249" y="0.0" width="39" height="30"/>
+                                        <state key="normal" title="Suma"/>
+                                        <connections>
+                                            <action selector="calculateSum:" destination="BV1-FR-VrT" eventType="touchUpInside" id="nBc-hW-nro"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ude-ts-bT0" userLabel="StackSum">
+                                <rect key="frame" x="93" y="110" width="134" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bko-Dd-ewt">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.049244631168781194" green="1" blue="0.0034353450977743227" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhI-cG-kfj">
+                                        <rect key="frame" x="92" y="0.0" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.049244631169999997" green="1" blue="0.0034353450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="A73-lX-ugh" secondAttribute="trailing" id="2bG-BO-kiy"/>
+                            <constraint firstItem="ude-ts-bT0" firstAttribute="top" secondItem="Ac4-vX-Drc" secondAttribute="bottom" constant="8" id="7QJ-h2-foK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ac4-vX-Drc" secondAttribute="trailing" id="H05-8g-0dY"/>
+                            <constraint firstItem="Ac4-vX-Drc" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" id="IuI-R4-0vC"/>
+                            <constraint firstItem="ude-ts-bT0" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="LXb-7g-oQu"/>
+                            <constraint firstItem="Ac4-vX-Drc" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" constant="8" id="MBL-UZ-EtA"/>
                             <constraint firstItem="4h9-ON-gx3" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" constant="25" id="UFD-Tt-IbZ"/>
                             <constraint firstItem="A73-lX-ugh" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="i8k-CV-RbI"/>
                             <constraint firstItem="A73-lX-ugh" firstAttribute="top" secondItem="4h9-ON-gx3" secondAttribute="bottom" constant="2.5" id="kWK-fH-lCr"/>
@@ -108,6 +132,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="SumLb" destination="Bko-Dd-ewt" id="FpM-Yh-n1l"/>
+                        <outlet property="SumLb2" destination="OhI-cG-kfj" id="dE9-pb-2d1"/>
                         <outlet property="dirLb" destination="NhD-iB-FgO" id="XcT-dp-vfj"/>
                         <outlet property="directionTextField" destination="eNj-f1-Ngj" id="wgK-et-n0J"/>
                         <outlet property="magLb" destination="sQi-PC-SXh" id="qr4-86-Jxk"/>

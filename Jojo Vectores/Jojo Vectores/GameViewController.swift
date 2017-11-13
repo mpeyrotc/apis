@@ -18,6 +18,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var magLb: UILabel!
     @IBOutlet weak var dirLb: UILabel!
     @IBOutlet weak var stackLb: UIStackView!
+    @IBOutlet weak var SumLb: UILabel!
+    @IBOutlet weak var SumLb2: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
