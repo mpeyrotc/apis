@@ -369,8 +369,6 @@ class GameScene: SKScene {
     
     // Removes the last vector added by the user, can be called several times.
     func removeVector() {
-        self.controller.magnitudeTextField.text = "0.0"
-        self.controller.directionTextField.text = "0.0"
         if !vectors.isEmpty {
             let v = vectors.popLast()!
             v.removeFromParent()
@@ -379,6 +377,17 @@ class GameScene: SKScene {
             a.removeFromParent()
             
             _ = points.popLast()
+            
+            if (points.count > 0){
+                initialPos = (points.last?.startPoint)!
+                magnitude = getMagnitude(toPoint: (points.last?.endPoint)!)
+                angulo = getAngle(toPoint: (points.last?.endPoint)!)
+                self.controller.magnitudeTextField.text = String(format: "%.2f", magnitude)
+                self.controller.directionTextField.text = String(format: "%.2f", angulo)
+            } else {
+                self.controller.magnitudeTextField.text = "0.0"
+                self.controller.directionTextField.text = "0.0"
+            }
         }
     }
     
