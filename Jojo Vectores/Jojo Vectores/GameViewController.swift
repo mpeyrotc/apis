@@ -18,6 +18,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var magLb: UILabel!
     @IBOutlet weak var dirLb: UILabel!
     @IBOutlet weak var stackLb: UIStackView!
+    @IBOutlet weak var stackTop: UIStackView!
     @IBOutlet weak var SumLb: UILabel!
     @IBOutlet weak var SumLb2: UILabel!
     @IBOutlet weak var Componentesbt: UIButton!
@@ -88,78 +89,91 @@ class GameViewController: UIViewController {
             magLb.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
             dirLb.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
             stackLb.widthAnchor.constraint(equalToConstant: 210.0).isActive = true
+            stackTop.widthAnchor.constraint(equalToConstant: 300.0).isActive = true
         case "iPhone 5c":
             magnitudeTextField.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
             directionTextField.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
             magLb.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
             dirLb.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
             stackLb.widthAnchor.constraint(equalToConstant: 210.0).isActive = true
+            stackTop.widthAnchor.constraint(equalToConstant: 300.0).isActive = true
         case "iPhone 5s":
             magnitudeTextField.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
             directionTextField.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
             magLb.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
             dirLb.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
             stackLb.widthAnchor.constraint(equalToConstant: 210.0).isActive = true
+            stackTop.widthAnchor.constraint(equalToConstant: 300.0).isActive = true
         case "iPhone 6":
             magnitudeTextField.widthAnchor.constraint(equalToConstant: 110.0).isActive = true
             directionTextField.widthAnchor.constraint(equalToConstant: 110.0).isActive = true
             magLb.widthAnchor.constraint(equalToConstant: 110.0).isActive = true
             dirLb.widthAnchor.constraint(equalToConstant: 110.0).isActive = true
             stackLb.widthAnchor.constraint(equalToConstant: 230.0).isActive = true
+            stackTop.widthAnchor.constraint(equalToConstant: 400.0).isActive = true
         case "iPhone 6 Plus":
             magnitudeTextField.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             directionTextField.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             magLb.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             dirLb.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             stackLb.widthAnchor.constraint(equalToConstant: 250.0).isActive = true
+            stackTop.widthAnchor.constraint(equalToConstant: 400.0).isActive = true
         case "iPhone 7":
             magnitudeTextField.widthAnchor.constraint(equalToConstant: 110.0).isActive = true
             directionTextField.widthAnchor.constraint(equalToConstant: 110.0).isActive = true
             magLb.widthAnchor.constraint(equalToConstant: 110.0).isActive = true
             dirLb.widthAnchor.constraint(equalToConstant: 110.0).isActive = true
             stackLb.widthAnchor.constraint(equalToConstant: 230.0).isActive = true
+            stackTop.widthAnchor.constraint(equalToConstant: 400.0).isActive = true
         case "iPhone 7 Plus":
             magnitudeTextField.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             directionTextField.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             magLb.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             dirLb.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             stackLb.widthAnchor.constraint(equalToConstant: 250.0).isActive = true
+            stackTop.widthAnchor.constraint(equalToConstant: 400.0).isActive = true
         case "iPhone SE":
             magnitudeTextField.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
             directionTextField.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
             magLb.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
             dirLb.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
             stackLb.widthAnchor.constraint(equalToConstant: 210.0).isActive = true
+            stackTop.widthAnchor.constraint(equalToConstant: 300.0).isActive = true
         case "iPhone 8":
             magnitudeTextField.widthAnchor.constraint(equalToConstant: 110.0).isActive = true
             directionTextField.widthAnchor.constraint(equalToConstant: 110.0).isActive = true
             magLb.widthAnchor.constraint(equalToConstant: 110.0).isActive = true
             dirLb.widthAnchor.constraint(equalToConstant: 110.0).isActive = true
             stackLb.widthAnchor.constraint(equalToConstant: 230.0).isActive = true
+            stackTop.widthAnchor.constraint(equalToConstant: 350.0).isActive = true
         case "iPhone 8 Plus":
             magnitudeTextField.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             directionTextField.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             magLb.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             dirLb.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             stackLb.widthAnchor.constraint(equalToConstant: 250.0).isActive = true
+            stackTop.widthAnchor.constraint(equalToConstant: 400.0).isActive = true
         case "iPhone X":
             magnitudeTextField.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             directionTextField.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             magLb.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             dirLb.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             stackLb.widthAnchor.constraint(equalToConstant: 250.0).isActive = true
+            stackTop.widthAnchor.constraint(equalToConstant: 400.0).isActive = true
         case "Simulator":
             magnitudeTextField.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             directionTextField.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             magLb.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             dirLb.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             stackLb.widthAnchor.constraint(equalToConstant: 250.0).isActive = true
+            stackTop.widthAnchor.constraint(equalToConstant: 350.0).isActive = true
         default:
             magnitudeTextField.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             directionTextField.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             magLb.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             dirLb.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
             stackLb.widthAnchor.constraint(equalToConstant: 250.0).isActive = true
+            stackTop.widthAnchor.constraint(equalToConstant: 300.0).isActive = true
         }
 
     }
@@ -167,18 +181,25 @@ class GameViewController: UIViewController {
     func setButtons(){
         let buttonColor = UIColor(rgb: 0x633239)
         let buttonBckColor = UIColor(rgb: 0xB75D69)
+        let buttonBorderColor = UIColor(rgb: 0x4F282D)
         Componentesbt.tintColor = buttonColor
         Componentesbt.backgroundColor = buttonBckColor
         Componentesbt.layer.cornerRadius = 10
         Componentesbt.clipsToBounds = true
+        Componentesbt.layer.borderColor = buttonBorderColor.cgColor
+        Componentesbt.layer.borderWidth = 1.5
         movebt.tintColor = buttonColor
         movebt.backgroundColor = buttonBckColor
         movebt.layer.cornerRadius = 10
         movebt.clipsToBounds = true
+        movebt.layer.borderColor = buttonBorderColor.cgColor
+        movebt.layer.borderWidth = 1.0
         sumbt.tintColor = buttonColor
         sumbt.backgroundColor = buttonBckColor
         sumbt.layer.cornerRadius = 10
         sumbt.clipsToBounds = true
+        sumbt.layer.borderColor = buttonBorderColor.cgColor
+        sumbt.layer.borderWidth = 0.7
     }
     
     func setLabels(){

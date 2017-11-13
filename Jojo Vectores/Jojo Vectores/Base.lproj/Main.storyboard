@@ -74,30 +74,35 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Ac4-vX-Drc" userLabel="StackTop">
-                                <rect key="frame" x="17" y="72" width="286" height="30"/>
+                                <rect key="frame" x="27" y="72" width="266" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJ4-ge-ZmR">
-                                        <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
-                                        <state key="normal" title="Componentes"/>
-                                        <connections>
-                                            <action selector="showComponents:" destination="BV1-FR-VrT" eventType="touchUpInside" id="XUm-hk-X6E"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bb6-rF-m0j">
-                                        <rect key="frame" x="126" y="0.0" width="91" height="30"/>
-                                        <state key="normal" title="Mover vector"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="30"/>
+                                        <state key="normal" title=" Mover "/>
                                         <connections>
                                             <action selector="moveVector:" destination="BV1-FR-VrT" eventType="touchUpInside" id="kym-OE-3SH"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJ4-ge-ZmR">
+                                        <rect key="frame" x="81" y="0.0" width="104" height="30"/>
+                                        <state key="normal" title=" Componentes "/>
+                                        <connections>
+                                            <action selector="showComponents:" destination="BV1-FR-VrT" eventType="touchUpInside" id="XUm-hk-X6E"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOP-am-9iS">
-                                        <rect key="frame" x="247" y="0.0" width="39" height="30"/>
-                                        <state key="normal" title="Suma"/>
+                                        <rect key="frame" x="215" y="0.0" width="51" height="30"/>
+                                        <state key="normal" title=" Suma "/>
                                         <connections>
                                             <action selector="calculateSum:" destination="BV1-FR-VrT" eventType="touchUpInside" id="nBc-hW-nro"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="QOP-am-9iS" firstAttribute="leading" secondItem="BJ4-ge-ZmR" secondAttribute="trailing" constant="30" id="p7U-1S-DOZ"/>
+                                    <constraint firstItem="BJ4-ge-ZmR" firstAttribute="leading" secondItem="Bb6-rF-m0j" secondAttribute="trailing" constant="30" id="rwz-We-Kf7"/>
+                                    <constraint firstItem="BJ4-ge-ZmR" firstAttribute="centerX" secondItem="Ac4-vX-Drc" secondAttribute="centerX" id="yTa-7e-vOV"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ude-ts-bT0" userLabel="StackSum">
                                 <rect key="frame" x="68" y="110" width="185.5" height="20.5"/>
@@ -121,8 +126,10 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="A73-lX-ugh" secondAttribute="trailing" id="2bG-BO-kiy"/>
                             <constraint firstItem="ude-ts-bT0" firstAttribute="top" secondItem="Ac4-vX-Drc" secondAttribute="bottom" constant="8" id="7QJ-h2-foK"/>
+                            <constraint firstItem="Ac4-vX-Drc" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" constant="11" id="BcJ-Mx-9yD"/>
                             <constraint firstItem="ude-ts-bT0" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="LXb-7g-oQu"/>
                             <constraint firstItem="Ac4-vX-Drc" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" constant="8" id="OpG-0s-igd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ac4-vX-Drc" secondAttribute="trailing" constant="11" id="OvF-G0-uQ9"/>
                             <constraint firstItem="4h9-ON-gx3" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" constant="25" id="UFD-Tt-IbZ"/>
                             <constraint firstItem="Ac4-vX-Drc" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="YCx-fk-RdJ"/>
                             <constraint firstItem="A73-lX-ugh" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="i8k-CV-RbI"/>
@@ -140,6 +147,7 @@
                         <outlet property="magnitudeTextField" destination="z3r-gb-Wa7" id="iGE-DG-fgI"/>
                         <outlet property="movebt" destination="Bb6-rF-m0j" id="BeG-E5-DEj"/>
                         <outlet property="stackLb" destination="4h9-ON-gx3" id="5JX-4k-WWO"/>
+                        <outlet property="stackTop" destination="Ac4-vX-Drc" id="7WP-xZ-B2b"/>
                         <outlet property="sumbt" destination="QOP-am-9iS" id="1bg-iE-b4j"/>
                     </connections>
                 </viewController>
