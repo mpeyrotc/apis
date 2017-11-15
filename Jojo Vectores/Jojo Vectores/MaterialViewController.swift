@@ -15,7 +15,6 @@ class MaterialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         let url = Bundle.main.url(forResource: "Manual", withExtension: "pdf")
         
         if let url = url {
@@ -29,21 +28,21 @@ class MaterialViewController: UIViewController {
         // Do any additional setup after loading the view.
         navigationItem.title = "Material de Estudio"
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        
-        return UIInterfaceOrientationMask.landscape
-        
-    }
+
     
     override var shouldAutorotate: Bool {
         
-        return false
+        return true
         
     }
 

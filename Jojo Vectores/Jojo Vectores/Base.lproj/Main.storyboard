@@ -462,13 +462,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S6C-2u-KNd">
-                                <rect key="frame" x="16" y="72" width="288" height="157"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S6C-2u-KNd">
+                                <rect key="frame" x="16" y="72" width="288" height="491"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6K2-Va-gGY" firstAttribute="top" secondItem="S6C-2u-KNd" secondAttribute="bottom" constant="5" id="B0O-3r-kOM"/>
+                            <constraint firstItem="S6C-2u-KNd" firstAttribute="top" secondItem="Qgc-GJ-glj" secondAttribute="bottom" constant="8" id="GIA-EZ-0mp"/>
+                            <constraint firstItem="S6C-2u-KNd" firstAttribute="leading" secondItem="QmJ-rI-TSK" secondAttribute="leadingMargin" id="cvM-Xq-a6m"/>
+                            <constraint firstItem="S6C-2u-KNd" firstAttribute="trailing" secondItem="QmJ-rI-TSK" secondAttribute="trailingMargin" id="qw5-Nn-kbN"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="videoLoader" destination="S6C-2u-KNd" id="J3t-pb-oGO"/>
@@ -566,6 +571,6 @@ El material de repaso para la suma de vectores fue obtenido de la UNAM. El docum
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="DfG-ky-KRV"/>
-        <segue reference="JU4-0s-cYJ"/>
+        <segue reference="Ik1-Bh-Vl3"/>
     </inferredMetricsTieBreakers>
 </document>

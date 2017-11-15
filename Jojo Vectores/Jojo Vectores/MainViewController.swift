@@ -22,9 +22,13 @@ class MainViewController: UIViewController, RestoreQuestionState {
     override func viewDidLoad() {
         super.viewDidLoad()
         setButtons()
-        
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,6 +88,10 @@ class MainViewController: UIViewController, RestoreQuestionState {
         CreditosBT.layer.borderWidth = 1.5
         CreditosBT.layer.cornerRadius = 10
         CreditosBT.clipsToBounds = true
+    }
+    
+    override var shouldAutorotate: Bool {
+        return true
     }
 }
 

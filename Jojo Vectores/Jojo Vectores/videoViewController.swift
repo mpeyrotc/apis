@@ -26,6 +26,11 @@ class VideoViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -34,6 +39,10 @@ class VideoViewController: UIViewController {
     func getVideo(videoCode: String){
         let url = URL(string: "https://www.youtube.com/embed/\(videoCode)")
         videoLoader.loadRequest(URLRequest(url: url!))
+    }
+    
+    override var shouldAutorotate: Bool {
+        return true
     }
     
     /*
