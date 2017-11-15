@@ -408,12 +408,75 @@
                     <view key="view" contentMode="scaleToFill" id="vVu-Tv-QeK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lml-oj-nsp">
+                                <rect key="frame" x="16" y="72" width="288" height="257"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="257" id="Veq-Fv-7St"/>
+                                </constraints>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIM-Tk-A8C">
+                                <rect key="frame" x="80" y="337" width="161" height="30"/>
+                                <state key="normal" title="tutorial: método gráfico"/>
+                                <connections>
+                                    <segue destination="QK8-OF-FPd" kind="show" identifier="MetodoGrafico" id="DfG-ky-KRV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I96-Tj-mCf">
+                                <rect key="frame" x="75" y="375" width="170" height="30"/>
+                                <state key="normal" title="tutorial: método analítico"/>
+                                <connections>
+                                    <segue destination="QK8-OF-FPd" kind="show" identifier="MetodoAnalitico" id="3ez-QD-d3V"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lml-oj-nsp" firstAttribute="trailing" secondItem="vVu-Tv-QeK" secondAttribute="trailingMargin" id="2xs-bD-UoQ"/>
+                            <constraint firstItem="lml-oj-nsp" firstAttribute="top" secondItem="o6x-bD-bd1" secondAttribute="bottom" constant="8" id="76n-JQ-BBQ"/>
+                            <constraint firstItem="I96-Tj-mCf" firstAttribute="top" secondItem="NIM-Tk-A8C" secondAttribute="bottom" constant="8" id="HKG-f0-gzo"/>
+                            <constraint firstItem="lml-oj-nsp" firstAttribute="leading" secondItem="vVu-Tv-QeK" secondAttribute="leadingMargin" id="UhO-Vz-7eK"/>
+                            <constraint firstItem="NIM-Tk-A8C" firstAttribute="top" secondItem="lml-oj-nsp" secondAttribute="bottom" constant="8" id="WpJ-TV-zAy"/>
+                            <constraint firstItem="I96-Tj-mCf" firstAttribute="centerX" secondItem="vVu-Tv-QeK" secondAttribute="centerX" id="uZ4-8Q-bnY"/>
+                            <constraint firstItem="NIM-Tk-A8C" firstAttribute="centerX" secondItem="vVu-Tv-QeK" secondAttribute="centerX" id="z2g-ex-t4Q"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pdfView" destination="lml-oj-nsp" id="u05-DS-8sN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7UI-Zc-gVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="107" y="1605"/>
+            <point key="canvasLocation" x="106.875" y="1604.5774647887324"/>
+        </scene>
+        <!--Video View Controller-->
+        <scene sceneID="p4A-gD-O2u">
+            <objects>
+                <viewController id="QK8-OF-FPd" customClass="VideoViewController" customModule="Jojo_Vectores" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qgc-GJ-glj"/>
+                        <viewControllerLayoutGuide type="bottom" id="6K2-Va-gGY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QmJ-rI-TSK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S6C-2u-KNd">
+                                <rect key="frame" x="16" y="72" width="288" height="157"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="videoLoader" destination="S6C-2u-KNd" id="J3t-pb-oGO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6P3-Wa-X5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1271.25" y="1946.8309859154929"/>
         </scene>
         <!--Credits View Controller-->
         <scene sceneID="oNS-vf-th1">
@@ -478,6 +541,7 @@ Jojo Vectores se distribuye como está de manera gratuita y se prohíbe su distr
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="DfG-ky-KRV"/>
         <segue reference="JU4-0s-cYJ"/>
     </inferredMetricsTieBreakers>
 </document>

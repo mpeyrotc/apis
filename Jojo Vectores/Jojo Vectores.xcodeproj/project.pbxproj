@@ -23,6 +23,8 @@
 		2835059E1F9ED19C0058CCE5 /* EvaluacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835059D1F9ED19C0058CCE5 /* EvaluacionViewController.swift */; };
 		283505A01F9ED4C80058CCE5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2835059F1F9ED4C80058CCE5 /* Settings.bundle */; };
 		287B62411FA7FC7C003FF500 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 287B62401FA7FC7C003FF500 /* Property List.plist */; };
+		4D0BC7D71FBCFEDD00799CA9 /* Manual.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4D0BC7D61FBCFEDC00799CA9 /* Manual.pdf */; };
+		4D0BC7D91FBD000F00799CA9 /* videoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0BC7D81FBD000F00799CA9 /* videoViewController.swift */; };
 		4D7F3BA51FB29D1F00B3A49B /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7F3BA41FB29D1F00B3A49B /* Grid.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,8 @@
 		2835059D1F9ED19C0058CCE5 /* EvaluacionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluacionViewController.swift; sourceTree = "<group>"; };
 		2835059F1F9ED4C80058CCE5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		287B62401FA7FC7C003FF500 /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		4D0BC7D61FBCFEDC00799CA9 /* Manual.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Manual.pdf; sourceTree = "<group>"; };
+		4D0BC7D81FBD000F00799CA9 /* videoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoViewController.swift; sourceTree = "<group>"; };
 		4D7F3BA41FB29D1F00B3A49B /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +101,7 @@
 		283505571F9E4A070058CCE5 = {
 			isa = PBXGroup;
 			children = (
+				4D0BC7D61FBCFEDC00799CA9 /* Manual.pdf */,
 				283505621F9E4A070058CCE5 /* Jojo Vectores */,
 				2835057D1F9E4A070058CCE5 /* Jojo VectoresTests */,
 				283505881F9E4A070058CCE5 /* Jojo VectoresUITests */,
@@ -125,6 +130,7 @@
 				2835056B1F9E4A070058CCE5 /* GameViewController.swift */,
 				2835059F1F9ED4C80058CCE5 /* Settings.bundle */,
 				2835056D1F9E4A070058CCE5 /* Main.storyboard */,
+				4D0BC7D81FBD000F00799CA9 /* videoViewController.swift */,
 				2835059D1F9ED19C0058CCE5 /* EvaluacionViewController.swift */,
 				2835059B1F9ED1740058CCE5 /* MaterialViewController.swift */,
 				283505701F9E4A070058CCE5 /* Assets.xcassets */,
@@ -263,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D0BC7D71FBCFEDD00799CA9 /* Manual.pdf in Resources */,
 				2835056F1F9E4A070058CCE5 /* Main.storyboard in Resources */,
 				287B62411FA7FC7C003FF500 /* Property List.plist in Resources */,
 				283505661F9E4A070058CCE5 /* GameScene.sks in Resources */,
@@ -295,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2835056A1F9E4A070058CCE5 /* GameScene.swift in Sources */,
+				4D0BC7D91FBD000F00799CA9 /* videoViewController.swift in Sources */,
 				2835056C1F9E4A070058CCE5 /* GameViewController.swift in Sources */,
 				283505641F9E4A070058CCE5 /* AppDelegate.swift in Sources */,
 				4D7F3BA51FB29D1F00B3A49B /* Grid.swift in Sources */,
