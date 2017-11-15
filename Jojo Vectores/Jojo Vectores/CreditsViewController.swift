@@ -10,11 +10,16 @@ import UIKit
 
 class CreditsViewController: UIViewController {
 
+    @IBOutlet weak var linkTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         navigationItem.title = "Créditos"
+        
+        linkTextView.isEditable = false
+        linkTextView.dataDetectorTypes = .link
     }
 
     override func didReceiveMemoryWarning() {

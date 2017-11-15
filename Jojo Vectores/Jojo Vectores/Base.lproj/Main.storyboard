@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Cr2-zM-NUX">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Cr2-zM-NUX">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -166,13 +166,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lH4-TY-T4C">
                                 <rect key="frame" x="5" y="5" width="310" height="558"/>
                                 <subviews>
-                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esx-4F-RjZ">
+                                    <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="esx-4F-RjZ">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="44"/>
                                         <items>
                                             <navigationItem title="Jojo Vectores" id="Icf-wD-hzx"/>
                                         </items>
                                     </navigationBar>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEI-Hl-Au4">
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEI-Hl-Au4">
                                         <rect key="frame" x="0.0" y="64" width="310" height="108.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <state key="normal" title="Practica">
@@ -182,7 +182,7 @@
                                             <segue destination="BV1-FR-VrT" kind="show" id="Ik1-Bh-Vl3"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tob-3O-4HY">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tob-3O-4HY">
                                         <rect key="frame" x="0.0" y="192.5" width="310" height="108.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <state key="normal" title="Evaluacion">
@@ -192,7 +192,7 @@
                                             <segue destination="KwI-ai-DJB" kind="show" identifier="evaluation" id="5gh-Is-xh8"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPL-bp-zBX">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPL-bp-zBX">
                                         <rect key="frame" x="0.0" y="321" width="310" height="108.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <state key="normal" title="Material de Estudio">
@@ -202,7 +202,7 @@
                                             <segue destination="Y45-EP-F24" kind="show" id="XzN-TP-8pO"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeu-yh-dpB">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeu-yh-dpB">
                                         <rect key="frame" x="0.0" y="449.5" width="310" height="108.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <state key="normal" title="Creditos">
@@ -427,13 +427,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="sAX-g5-sD3">
-                                <rect key="frame" x="16" y="74" width="288" height="476"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7q-mu-Jeb">
+                                <rect key="frame" x="16" y="40" width="288" height="488"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="476" id="Hzn-AN-rgC"/>
-                                </constraints>
-                                <string key="text">Jojo Vectores ha sido desarrollado por estudiantes del Tecnológico de Monterrey durante el semestre Agosto-Diciembre de 2017, como parte del curso de Administración de Proyectos de Ingeniería de Software y asesorados por la maestra Jakeline Marcos.
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Jojo Vectores ha sido desarrollado por estudiantes del Tecnológico de Monterrey durante el semestre Agosto-Diciembre de 2017, como parte del curso de Administración de Proyectos de Ingeniería de Software y asesorados por la maestra Jakeline Marcos.
 
 Desarrolladores:
 Marco Antonio César Peyrot Carrión
@@ -441,18 +441,32 @@ Carlos Salvador Garza Garza
 Daniel González González
 Juan Alfredo Pestana Viso
 
-Jojo Vectores se distribuye como está de manera gratuita y se prohíbe su distribución y uso con fines de lucro. </string>
+Jojo Vectores se distribuye como está de manera gratuita y se prohíbe su distribución y uso con fines de lucro. 
+
+El material de repaso para la suma de vectores fue obtenido de la UNAM. El documento fue generado por GRM para el semestre 2013-1. Se puede tener acceso a dicho documento a través de la liga: 
+</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="http://depa.fquim.unam.mx/amyd/archivero/Repaso-vectores_22618.pdf" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hhv-om-GuM">
+                                <rect key="frame" x="16" y="501" width="288" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.089073787009299132" green="0.27208748277291772" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="sAX-g5-sD3" firstAttribute="leading" secondItem="cBr-fp-gRV" secondAttribute="leadingMargin" id="ERH-Rv-P7n"/>
-                            <constraint firstItem="sAX-g5-sD3" firstAttribute="top" secondItem="waA-oT-zg8" secondAttribute="bottom" constant="10" id="viu-nE-hxa"/>
-                            <constraint firstItem="sAX-g5-sD3" firstAttribute="trailing" secondItem="cBr-fp-gRV" secondAttribute="trailingMargin" id="vt1-yF-EEu"/>
-                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="linkTextView" destination="Hhv-om-GuM" id="yTb-DZ-mQP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4M-A3-LcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
