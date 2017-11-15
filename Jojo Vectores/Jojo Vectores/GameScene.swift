@@ -249,8 +249,8 @@ class GameScene: SKScene {
         path.addLine(to: pos)
         angulo = getAngle(toPoint: pos)
         magnitude = getMagnitude(toPoint: pos)
-        self.controller.magnitudeTextField.text = String(format: "%.2f", magnitude)
-        self.controller.directionTextField.text = String(format: "%.2f", angulo)
+        self.controller.magLb.text = "Magnitud: " + String(format: "%.2f", magnitude)
+        self.controller.dirLb.text = "Angulo: " + String(format: "%.2f", angulo)
         //print("Magnitude: " + String(getMagnitude(toPoint: pos)))
         //print("Angle: " + String(getAngle(toPoint: pos)))
         shape.path = path.cgPath
@@ -387,11 +387,11 @@ class GameScene: SKScene {
                 initialPos = (points.last?.startPoint)!
                 magnitude = getMagnitude(toPoint: (points.last?.endPoint)!)
                 angulo = getAngle(toPoint: (points.last?.endPoint)!)
-                self.controller.magnitudeTextField.text = String(format: "%.2f", magnitude)
-                self.controller.directionTextField.text = String(format: "%.2f", angulo)
+                self.controller.magLb.text = "Magnitud: " + String(format: "%.2f", magnitude)
+                self.controller.dirLb.text = "Angulo: " + String(format: "%.2f", angulo)
             } else {
-                self.controller.magnitudeTextField.text = "0.0"
-                self.controller.directionTextField.text = "0.0"
+                self.controller.magLb.text = "Magnitud: 0.0"
+                self.controller.dirLb.text = "Angulo 0.0"
             }
         }
     }
