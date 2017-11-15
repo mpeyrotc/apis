@@ -350,15 +350,14 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="bI5-rX-aDx">
-                                        <rect key="frame" x="0.0" y="50.5" width="190" height="30"/>
+                                        <rect key="frame" x="0.0" y="50.5" width="69" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyB-qw-gcD">
-                                                <rect key="frame" x="0.0" y="0.0" width="67" height="30"/>
-                                                <state key="normal" title="Sin ayuda"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SX8-V3-52f">
-                                                <rect key="frame" x="117" y="0.0" width="73" height="30"/>
-                                                <state key="normal" title="Con ayuda"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
+                                                <state key="normal" title="Simulador"/>
+                                                <connections>
+                                                    <segue destination="BV1-FR-VrT" kind="show" id="JU4-0s-cYJ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -390,7 +389,6 @@
                         <outlet property="progressLabel" destination="fLL-RZ-ROm" id="RUE-A2-NFK"/>
                         <outlet property="questionTextArea" destination="AQg-ns-g1a" id="4ts-y4-QcJ"/>
                         <outlet property="submitButton" destination="xhH-8m-4yg" id="4Ub-CN-Thj"/>
-                        <outlet property="withHelpButton" destination="SX8-V3-52f" id="egp-Q0-2tv"/>
                         <outlet property="withoutHelpButton" destination="eyB-qw-gcD" id="8yS-gs-pqZ"/>
                     </connections>
                 </viewController>
@@ -401,7 +399,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-939.375" y="1560.2112676056338"/>
+            <point key="canvasLocation" x="1729" y="757"/>
         </scene>
         <!--Material View Controller-->
         <scene sceneID="ChE-Hn-Ee1">
@@ -483,4 +481,7 @@ Jojo Vectores se distribuye como está de manera gratuita y se prohíbe su distr
             <point key="canvasLocation" x="-939.375" y="757.3943661971831"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="JU4-0s-cYJ"/>
+    </inferredMetricsTieBreakers>
 </document>
