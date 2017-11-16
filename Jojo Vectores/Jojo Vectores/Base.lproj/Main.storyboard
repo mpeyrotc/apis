@@ -119,14 +119,14 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Componente 1: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbM-6p-Iq2">
-                                <rect key="frame" x="26" y="138" width="120" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Componente X: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbM-6p-Iq2">
+                                <rect key="frame" x="26" y="138" width="123.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.38816938653738431" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Componente 2: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RK3-bk-ReU">
-                                <rect key="frame" x="26" y="158.5" width="122.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Componente Y: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RK3-bk-ReU">
+                                <rect key="frame" x="26" y="158" width="122.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.38816938649999999" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -155,6 +155,8 @@
                         <outlet property="Componentesbt" destination="BJ4-ge-ZmR" id="aAq-27-paB"/>
                         <outlet property="SumLb" destination="Bko-Dd-ewt" id="FpM-Yh-n1l"/>
                         <outlet property="SumLb2" destination="OhI-cG-kfj" id="dE9-pb-2d1"/>
+                        <outlet property="compX" destination="MbM-6p-Iq2" id="dde-Sw-ECF"/>
+                        <outlet property="compY" destination="RK3-bk-ReU" id="iJI-jY-Oan"/>
                         <outlet property="dirLb" destination="NhD-iB-FgO" id="XcT-dp-vfj"/>
                         <outlet property="magLb" destination="sQi-PC-SXh" id="qr4-86-Jxk"/>
                         <outlet property="movebt" destination="Bb6-rF-m0j" id="BeG-E5-DEj"/>

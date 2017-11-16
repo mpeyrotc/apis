@@ -464,6 +464,8 @@ class GameScene: SKScene {
             
             self.controller.SumLb.text = "Magnitud: " + String(format: "%.2f", sumMag)
             self.controller.SumLb2.text = "Angulo: " + String(format: "%.2f", sumAng)
+            self.controller.compX.text = "Componente X: " + String(format: "%.2f", componentX)
+            self.controller.compY.text = "Componente Y: " + String(format: "%.2f", componentY)
         } else {
             // if the sum vector is currently being shown, remove it.
             self.enumerateChildNodes(withName: "sum_vector") {
@@ -472,6 +474,8 @@ class GameScene: SKScene {
             }
             self.controller.SumLb.text = "Magnitud:"
             self.controller.SumLb2.text = "Angulo:"
+            self.controller.compX.text = "Componente X: "
+            self.controller.compY.text = "Componente Y: "
             showingSum = false
         }
     }

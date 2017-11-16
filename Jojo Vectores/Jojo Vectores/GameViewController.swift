@@ -22,6 +22,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var Componentesbt: UIButton!
     @IBOutlet weak var movebt: UIButton!
     @IBOutlet weak var sumbt: UIButton!
+    @IBOutlet weak var compX: UILabel!
+    @IBOutlet weak var compY: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
