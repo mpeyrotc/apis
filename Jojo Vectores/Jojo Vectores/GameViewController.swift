@@ -72,6 +72,9 @@ class GameViewController: UIViewController {
         realScene.showComponents()
     }
     
+    @IBAction func resetVectors(_ sender: UIBarButtonItem) {
+        realScene.resetSimulator()
+    }
     
     @IBAction func calculateSum(_ sender: UIButton) {
         realScene.sumVectors()

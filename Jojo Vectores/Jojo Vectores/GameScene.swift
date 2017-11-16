@@ -53,13 +53,7 @@ class GameScene: SKScene {
     var controller: GameViewController!
     
     override func sceneDidLoad() {
-        //Checar grid para diferentes modelos
-        let w = ceil(UIScreen.main.bounds.width / 10.0)
-        let h = ceil(UIScreen.main.bounds.height / 10.0)
-        if let grid = Grid(blockSize: 40.0, rows: Int(h), cols: Int(w)){
-            grid.position = CGPoint (x:frame.midX, y:frame.midY)
-            addChild(grid)
-        }
+        makeGrid()
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -370,6 +364,32 @@ class GameScene: SKScene {
     
     func moveVector() {
         movingVector = true
+    }
+    
+    func makeGrid() {
+        //Checar grid para diferentes modelos
+        let w = ceil(UIScreen.main.bounds.width / 10.0)
+        let h = ceil(UIScreen.main.bounds.height / 10.0)
+        if let grid = Grid(blockSize: 40.0, rows: Int(h), cols: Int(w)){
+            grid.position = CGPoint (x:frame.midX, y:frame.midY)
+            addChild(grid)
+        }
+    }
+    
+    func resetSimulator() {
+        points = [VectorEndPoints]()
+        arrows = [SKShapeNode]()
+        vectors = [SKShapeNode]()
+        lastVector = SKShapeNode()
+        lastArrow = SKShapeNode()
+        movingVector = false
+        addVectorNow = false
+        showingComponents = false
+        showingSum = false
+        removeAllChildren()
+        makeGrid()
+        self.controller.magLb.text = "Magnitud: "
+        self.controller.dirLb.text = "Angulo: "
     }
     
     // Removes the last vector added by the user, can be called several times.
