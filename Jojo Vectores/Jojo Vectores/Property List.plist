@@ -4,15 +4,51 @@
 <array>
 	<dict>
 		<key>identifier</key>
+		<string>THIRTEEN</string>
+		<key>description</key>
+		<string>Dados los siguientes vectores: A = VAR_FUERZA_1, 30 grados. B = VAR_FUERZA_2, 40 grados. C = VAR_FUERZA_3, 50 grados. Calcula la magnitud del vector resultante.</string>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>TWELVE</string>
+		<key>description</key>
+		<string>Dos amigas jalan una cuerda en posiciones opuestas. La primera la jala en dirección ESTE con una fuerza de VAR_FUERZA_1 Newtons. La segunda, la jala con una fuerza de VAR_FUERZA_2 Newtons. Hacia la dirección de qué amiga se movieron? 1 o 2?</string>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>ELEVEN</string>
+		<key>description</key>
+		<string>Un pájaro vuela por todo el país. Se mueve VAR_DIST_1 M, Este; luego vuela VAR_DIST_2 M, Sur; después avanza otros VAR_DIST_3 m, al Este y por último vuela VAR_DIST_4 M, al Norte. ¿Cuál es el desplazamiento del pájaro?</string>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>TEN</string>
+		<key>description</key>
+		<string>Un caballo camina por una parcela y registra los siguientes desplazamientos: A = VAR_DIST_1 m, N; B =VAR_DIST_2 M, O; C = VAR_DIST_3 m, S y D = VAR_DIST_4 m, E. ¿Cuál es el desplazamiento neto del caballo?</string>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>NINE</string>
+		<key>description</key>
+		<string>Calcula la magnitud del vector resultante si te dan los siguientes vectores: F1 = VAR_FUERZA_1, 45 grados. F2 = VAR_FUERZA_2, 42 grados. F3 = VAR_FUERZA_3, 79 grados.</string>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>EIGHT</string>
+		<key>description</key>
+		<string>Un trineo está amarrado a un árbol en una montaña de nieve a VAR_GRADOS grados. Si el trineo pesa VAR_PESO Newtons, encuentra la magnitud de la tensión de la tensión que ejerce la cuerda en el trineo.</string>
+	</dict>
+	<dict>
+		<key>identifier</key>
 		<string>SEVEN</string>
 		<key>description</key>
-		<string>Un semáforo está colgado de dos cables, ambos con una tensión de VAR_PESO Newtons. Encuentra los ángulos que hacen respecto al eje x.</string>
+		<string>Un semáforo que pesa VAR_PESO_1 Newtons está colgado de dos cables, ambos con una tensión de VAR_PESO_2 Newtons. Encuentra los ángulos que hacen respecto al eje x.</string>
 	</dict>
 	<dict>
 		<key>identifier</key>
 		<string>SIX</string>
 		<key>description</key>
-		<string>Un semáforo cuelga de un cable que está amarrado a dos cables. El semáforo pesa VAR_PESO Newtons. Uno de los cables hacen un ángulo de VAR_GRADOS_1 grados con respecto al eje X. Encuentra la tensión en este cable si el otro cable tiene un ángulo de VAR_GRADOS_2 grados.  </string>
+		<string>Un semáforo cuelga de un cable que está amarrado a dos cables. El semáforo pesa VAR_PESO Newtons. Los cables hacen un ángulo de VAR_GRADOS_1 grados con respecto al eje X. Encuentra la tensión en este cable si el otro cable tiene un ángulo de VAR_GRADOS_2 grados.  </string>
 	</dict>
 	<dict>
 		<key>description</key>

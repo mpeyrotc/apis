@@ -174,14 +174,169 @@ class EvaluacionViewController: UIViewController {
             question_result = question_result.replacingOccurrences(of: "VAR_GRADOS_2", with: String(describing: var_grados_2))
             //            // RESPUESTA
             
+            let parte_uno = ((cos(var_grados_1 * Double.pi / 180.0) / cos(var_grados_2 * Double.pi / 180.0)) * sin(var_grados_2 * Double.pi / 180.0)) + sin(var_grados_2 * Double.pi / 180.0)
+            var_respuesta = var_peso / parte_uno
             
             //
             //
-            //            currentAnswer = var_respuesta
-            //            // IMPRIMIR RESPUESTA EN CONSOLA
-            //            print(currentAnswer)
+            currentAnswer = var_respuesta
+            // IMPRIMIR RESPUESTA EN CONSOLA
+            print(currentAnswer)
             break
+        case "SEVEN":
+            // VARIABLES
+            let var_peso_1 = Double(arc4random_uniform(UInt32(100.0)))// MAX METROS
+            let var_peso_2 = Double(arc4random_uniform(UInt32(100.0)))
             
+            // EDITAR TEXTO DEL PROBLEMA
+            question_result = question.replacingOccurrences(of: "VAR_PESO_1", with: String(describing: var_peso_1))
+            question_result = question_result.replacingOccurrences(of: "VAR_PESO_2", with: String(describing: var_peso_2))
+            // RESPUESTA
+            var_respuesta = asin((var_peso_1 / (var_peso_2 * 2)) * Double.pi / 180.0)
+            
+            currentAnswer = var_respuesta
+            // IMPRIMIR RESPUESTA EN CONSOLA
+            print(currentAnswer)
+            break
+        case "EIGHT":
+            // VARIABLES
+            let var_grados = Double(arc4random_uniform(UInt32(80.0)))// MAX METROS
+            let var_peso = Double(arc4random_uniform(UInt32(100.0)))
+            
+            // EDITAR TEXTO DEL PROBLEMA
+            question_result = question.replacingOccurrences(of: "VAR_PESO", with: String(describing: var_peso))
+            question_result = question_result.replacingOccurrences(of: "VAR_GRADOS", with: String(describing: var_grados))
+            // RESPUESTA
+            var_respuesta = var_peso * sin(var_grados * Double.pi / 180.0)
+            
+            currentAnswer = var_respuesta
+            // IMPRIMIR RESPUESTA EN CONSOLA
+            print(currentAnswer)
+            break
+        case "NINE":
+            // VARIABLES
+            let var_fuerza_1 = Double(arc4random_uniform(UInt32(100.0)))// MAX METROS
+            let var_fuerza_2 = Double(arc4random_uniform(UInt32(100.0)))
+            let var_fuerza_3 = Double(arc4random_uniform(UInt32(100.0)))
+            
+            // EDITAR TEXTO DEL PROBLEMA
+            question_result = question.replacingOccurrences(of: "VAR_FUERZA_1", with: String(describing: var_fuerza_1))
+            question_result = question_result.replacingOccurrences(of: "VAR_FUERZA_2", with: String(describing: var_fuerza_2))
+            question_result = question_result.replacingOccurrences(of: "VAR_FUERZA_3", with: String(describing: var_fuerza_3))
+            
+            // RESPUESTA
+            let var_x_1 = var_fuerza_1 * cos(45 * Double.pi / 180.0)
+            let var_x_2 = var_fuerza_1 * cos(42 * Double.pi / 180.0)
+            let var_x_3 = var_fuerza_1 * cos(79 * Double.pi / 180.0)
+            
+            let var_y_1 = var_fuerza_1 * sin(45 * Double.pi / 180.0)
+            let var_y_2 = var_fuerza_1 * sin(42 * Double.pi / 180.0)
+            let var_y_3 = var_fuerza_1 * sin(79 * Double.pi / 180.0)
+            
+            let var_x_total = var_x_1 + var_x_2 + var_x_3
+            let var_y_total = var_y_1 + var_y_2 + var_y_3
+            
+            var_respuesta = sqrt((var_x_total * var_x_total) + (var_y_total * var_y_total))
+            
+            currentAnswer = var_respuesta
+            // IMPRIMIR RESPUESTA EN CONSOLA
+            print(currentAnswer)
+            break
+        case "TEN":
+            // VARIABLES
+            let var_distancia_1 = Double(arc4random_uniform(UInt32(100.0)))// NORTE
+            let var_distancia_2 = Double(arc4random_uniform(UInt32(100.0))) // OESTE
+            let var_distancia_3 = Double(arc4random_uniform(UInt32(100.0))) // SUR
+            let var_distancia_4 = Double(arc4random_uniform(UInt32(100.0))) // ESTE
+            
+            // EDITAR TEXTO DEL PROBLEMA
+            question_result = question.replacingOccurrences(of: "VAR_DIST_1", with: String(describing: var_distancia_1))
+            question_result = question_result.replacingOccurrences(of: "VAR_DIST_2", with: String(describing: var_distancia_2))
+            question_result = question_result.replacingOccurrences(of: "VAR_DIST_3", with: String(describing: var_distancia_3))
+            question_result = question_result.replacingOccurrences(of: "VAR_DIST_4", with: String(describing: var_distancia_4))
+            
+            // RESPUESTA
+            let var_x_total = var_distancia_1 - var_distancia_3
+            let var_y_total = var_distancia_4 - var_distancia_2
+            
+            var_respuesta = sqrt((var_x_total * var_x_total) + (var_y_total * var_y_total))
+            
+            currentAnswer = var_respuesta
+            // IMPRIMIR RESPUESTA EN CONSOLA
+            print(currentAnswer)
+            break
+        case "ELEVEN":
+            // VARIABLES
+            let var_distancia_1 = Double(arc4random_uniform(UInt32(100.0)))// ESTE
+            let var_distancia_2 = Double(arc4random_uniform(UInt32(100.0))) // SUR
+            let var_distancia_3 = Double(arc4random_uniform(UInt32(100.0))) // ESTE
+            let var_distancia_4 = Double(arc4random_uniform(UInt32(100.0))) // NORTE
+            
+            // EDITAR TEXTO DEL PROBLEMA
+            question_result = question.replacingOccurrences(of: "VAR_DIST_1", with: String(describing: var_distancia_1))
+            question_result = question_result.replacingOccurrences(of: "VAR_DIST_2", with: String(describing: var_distancia_2))
+            question_result = question_result.replacingOccurrences(of: "VAR_DIST_3", with: String(describing: var_distancia_3))
+            question_result = question_result.replacingOccurrences(of: "VAR_DIST_4", with: String(describing: var_distancia_4))
+            
+            // RESPUESTA
+            let var_x_total = var_distancia_1 + var_distancia_3
+            let var_y_total = var_distancia_4 - var_distancia_2
+            
+            var_respuesta = sqrt((var_x_total * var_x_total) + (var_y_total * var_y_total))
+            
+            currentAnswer = var_respuesta
+            // IMPRIMIR RESPUESTA EN CONSOLA
+            print(currentAnswer)
+            break
+        case "TWELVE":
+            // VARIABLES
+            let var_fuerza_1 = Double(arc4random_uniform(UInt32(100.0)))
+            let var_fuerza_2 = Double(arc4random_uniform(UInt32(100.0)))
+            
+            // EDITAR TEXTO DEL PROBLEMA
+            question_result = question.replacingOccurrences(of: "VAR_FUERZA_1", with: String(describing: var_fuerza_1))
+            question_result = question_result.replacingOccurrences(of: "VAR_FUERZA_2", with: String(describing: var_fuerza_2))
+            
+            // RESPUESTA
+            if(var_fuerza_1 > var_fuerza_2){
+                var_respuesta = 1
+            }else{
+                var_respuesta = 2
+            }
+            
+            currentAnswer = var_respuesta
+            // IMPRIMIR RESPUESTA EN CONSOLA
+            print(currentAnswer)
+            break
+        case "THIRTEEN":
+            // VARIABLES
+            let var_fuerza_1 = Double(arc4random_uniform(UInt32(100.0)))// MAX METROS
+            let var_fuerza_2 = Double(arc4random_uniform(UInt32(100.0)))
+            let var_fuerza_3 = Double(arc4random_uniform(UInt32(100.0)))
+            
+            // EDITAR TEXTO DEL PROBLEMA
+            question_result = question.replacingOccurrences(of: "VAR_FUERZA_1", with: String(describing: var_fuerza_1))
+            question_result = question_result.replacingOccurrences(of: "VAR_FUERZA_2", with: String(describing: var_fuerza_2))
+            question_result = question_result.replacingOccurrences(of: "VAR_FUERZA_3", with: String(describing: var_fuerza_3))
+            
+            // RESPUESTA
+            let var_x_1 = var_fuerza_1 * cos(30 * Double.pi / 180.0)
+            let var_x_2 = var_fuerza_1 * cos(40 * Double.pi / 180.0)
+            let var_x_3 = var_fuerza_1 * cos(50 * Double.pi / 180.0)
+            
+            let var_y_1 = var_fuerza_1 * sin(30 * Double.pi / 180.0)
+            let var_y_2 = var_fuerza_1 * sin(40 * Double.pi / 180.0)
+            let var_y_3 = var_fuerza_1 * sin(50 * Double.pi / 180.0)
+            
+            let var_x_total = var_x_1 + var_x_2 + var_x_3
+            let var_y_total = var_y_1 + var_y_2 + var_y_3
+            
+            var_respuesta = sqrt((var_x_total * var_x_total) + (var_y_total * var_y_total))
+            
+            currentAnswer = var_respuesta
+            // IMPRIMIR RESPUESTA EN CONSOLA
+            print(currentAnswer)
+            break
             
             
             
