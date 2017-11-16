@@ -3,20 +3,44 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>identifier</key>
+		<string>SEVEN</string>
 		<key>description</key>
-		<string>This is problem ONE.</string>
+		<string>Un semáforo está colgado de dos cables, ambos con una tensión de VAR_PESO Newtons. Encuentra los ángulos que hacen respecto al eje x.</string>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>SIX</string>
+		<key>description</key>
+		<string>Un semáforo cuelga de un cable que está amarrado a dos cables. El semáforo pesa VAR_PESO Newtons. Uno de los cables hacen un ángulo de VAR_GRADOS_1 grados con respecto al eje X. Encuentra la tensión en este cable si el otro cable tiene un ángulo de VAR_GRADOS_2 grados.  </string>
+	</dict>
+	<dict>
+		<key>description</key>
+		<string>La mujer maravilla saltó de un edificio con un desplazamiento de VAR_METROS_X metros del componente X y VAR_METROS_Y del componente Y. Encuentra a qué ángulo saltó.</string>
+		<key>identifier</key>
+		<string>FIVE</string>
+	</dict>
+	<dict>
+		<key>description</key>
+		<string>Dos personas empujan un carro. Una lo empuja con una fuerza de VAR_FUERZA_1 N al este. Y la otra con una fuerza de VAR_FUERZA_2 N al este. Cual es la fuerza ejercida en el carro? (No hay friccion).</string>
+		<key>identifier</key>
+		<string>FOUR</string>
+	</dict>
+	<dict>
+		<key>description</key>
+		<string>Encuentra el componente en el eje X del desplazamiendo de VAR_METROS metros de un superheroe que vuela a VAR_ANGULO grados al norte.</string>
 		<key>identifier</key>
 		<string>ONE</string>
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>This is problem TWO.</string>
+		<string>Encuentra el componente en el eje Y del desplazamiendo de VAR_METROS metros de un pajaro que vuela a VAR_ANGULO grados al norte.</string>
 		<key>identifier</key>
 		<string>TWO</string>
 	</dict>
 	<dict>
 		<key>description</key>
-		<string>This is problem THREE.</string>
+		<string>Superman salto de un edificio con un desplazamiento de VAR_METROS_X metros del componente X y VAR_METROS_Y del componente Y. Encuentra la magnitud de la resultante.</string>
 		<key>identifier</key>
 		<string>THREE</string>
 	</dict>

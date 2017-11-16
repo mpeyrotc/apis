@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 protocol RestoreQuestionState {
     func setValues(questionIndex: Int, questionsAnswered: Int)
@@ -29,10 +30,10 @@ class EvaluacionViewController: UIViewController {
     
     var num_questions: Int!
     var answered_questions: Int!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         navigationItem.title = "Evaluación"
         questionTextArea.text = ""
@@ -54,7 +55,7 @@ class EvaluacionViewController: UIViewController {
         progressLabel.text = String(answered_questions) + "/" + String(num_questions)
         progressBar.progress = Float(answered_questions) / Float(num_questions!)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -83,30 +84,115 @@ class EvaluacionViewController: UIViewController {
     
     func showQuestion(currentQuestion: Int) {
         let dict = questions[currentQuestion] as! NSDictionary
-        
+        var var_respuesta = 0.0
         // Create new question
         let question:String = dict.value(forKey: "description") as! String
         let identifier = dict.value(forKey: "identifier") as! String
-        
+        var question_result = "" // aqui se pone la pregunta ya con los valores seleccionados
         submitButton.isEnabled = true
         
         switch identifier {
         case "ONE":
-            currentAnswer = 1
+            // VARIABLES
+            let var_metros = Double(arc4random_uniform(UInt32(100.0)))// MAX METROS
+            let var_grados = Double(arc4random_uniform(UInt32(80.0)))
+            // EDITAR TEXTO DEL PROBLEMA
+            question_result = question.replacingOccurrences(of: "VAR_METROS", with: String(describing: var_metros))
+            question_result = question_result.replacingOccurrences(of: "VAR_ANGULO", with: String(describing: var_grados))
+            // RESPUESTA
+            var_respuesta = Double(var_metros) * cos(Double(var_grados) * Double.pi / 180.0)
+            currentAnswer = var_respuesta
+            // IMPRIMIR RESPUESTA EN CONSOLA
+            print(currentAnswer)
             break
+        ////////////////////////////////////////////////////////////////////////////////////////////
         case "TWO":
-            currentAnswer = 2
+            // VARIABLES
+            let var_metros = Double(arc4random_uniform(UInt32(100.0)))// MAX METROS
+            let var_grados = Double(arc4random_uniform(UInt32(80.0)))
+            // EDITAR TEXTO DEL PROBLEMA
+            question_result = question.replacingOccurrences(of: "VAR_METROS", with: String(describing: var_metros))
+            question_result = question_result.replacingOccurrences(of: "VAR_ANGULO", with: String(describing: var_grados))
+            // RESPUESTA
+            var_respuesta = Double(var_metros) * sin(Double(var_grados) * Double.pi / 180.0)
+            currentAnswer = var_respuesta
+            // IMPRIMIR RESPUESTA EN CONSOLA
+            print(currentAnswer)
             break
+        ////////////////////////////////////////////////////////////////////////////////////////////
         case "THREE":
-            currentAnswer = 3
+            // VARIABLES
+            let var_metros_x = Double(arc4random_uniform(UInt32(100.0)))// MAX METROS
+            let var_metros_y = Double(arc4random_uniform(UInt32(100.0)))
+            // EDITAR TEXTO DEL PROBLEMA
+            question_result = question.replacingOccurrences(of: "VAR_METROS_X", with: String(describing: var_metros_x))
+            question_result = question_result.replacingOccurrences(of: "VAR_METROS_Y", with: String(describing: var_metros_y))
+            // RESPUESTA
+            var_respuesta = sqrt((var_metros_x * var_metros_x) * (var_metros_y * var_metros_y))
+            currentAnswer = var_respuesta
+            // IMPRIMIR RESPUESTA EN CONSOLA
+            print(currentAnswer)
             break
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        case "FOUR":
+            // VARIABLES
+            let var_fuerza_1 = Double(arc4random_uniform(UInt32(200.0)))// MAX METROS
+            let var_fuerza_2 = Double(arc4random_uniform(UInt32(200.0)))
+            // EDITAR TEXTO DEL PROBLEMA
+            question_result = question.replacingOccurrences(of: "VAR_FUERZA_1", with: String(describing: var_fuerza_1))
+            question_result = question_result.replacingOccurrences(of: "VAR_FUERZA_2", with: String(describing: var_fuerza_2))
+            // RESPUESTA
+            var_respuesta = var_fuerza_1 + var_fuerza_2
+            currentAnswer = var_respuesta
+            // IMPRIMIR RESPUESTA EN CONSOLA
+            print(currentAnswer)
+            break
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        case "FIVE":
+            // VARIABLES
+            let var_metros_x = Double(arc4random_uniform(UInt32(100.0)))// MAX METROS
+            let var_metros_y = Double(arc4random_uniform(UInt32(100.0)))
+            // EDITAR TEXTO DEL PROBLEMA
+            question_result = question.replacingOccurrences(of: "VAR_METROS_X", with: String(describing: var_metros_x))
+            question_result = question_result.replacingOccurrences(of: "VAR_METROS_Y", with: String(describing: var_metros_y))
+            // RESPUESTA
+            var_respuesta = atan((var_metros_y / var_metros_x) * Double.pi / 180.0)
+            currentAnswer = var_respuesta
+            // IMPRIMIR RESPUESTA EN CONSOLA
+            print(currentAnswer)
+            break
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        case "SIX":
+            // VARIABLES
+            let var_peso = Double(arc4random_uniform(UInt32(50.0)))// MAX METROS
+            let var_grados_1 = Double(arc4random_uniform(UInt32(80.0)))
+            let var_grados_2 = Double(arc4random_uniform(UInt32(80.0)))
+            //
+            //            // EDITAR TEXTO DEL PROBLEMA
+            question_result = question.replacingOccurrences(of: "VAR_PESO", with: String(describing: var_peso))
+            question_result = question_result.replacingOccurrences(of: "VAR_GRADOS_1", with: String(describing: var_grados_1))
+            question_result = question_result.replacingOccurrences(of: "VAR_GRADOS_2", with: String(describing: var_grados_2))
+            //            // RESPUESTA
+            
+            
+            //
+            //
+            //            currentAnswer = var_respuesta
+            //            // IMPRIMIR RESPUESTA EN CONSOLA
+            //            print(currentAnswer)
+            break
+            
+            
+            
+            
+            
         default:
             // nothing
             print("ERROR")
         }
         
         // set question visible to the user
-        questionTextArea.text = question
+        questionTextArea.text = question_result
         answerTextField.text = ""
         
         delegate?.setValues(questionIndex: currentQuestion, questionsAnswered: answered_questions)
@@ -115,7 +201,7 @@ class EvaluacionViewController: UIViewController {
     @IBAction func displayNewQuestion(_ sender: UIButton) {
         createQuestion()
     }
-
+    
     @IBAction func submitAnswer(_ sender: UIButton) {
         var isCorrect:Bool = false
         
@@ -133,12 +219,12 @@ class EvaluacionViewController: UIViewController {
             
             if isCorrect {
                 alerta = UIAlertController(title: "MUY BIEN!",
-                                               message: "Continúa así.",
-                                               preferredStyle: .alert)
+                                           message: "Continúa así.",
+                                           preferredStyle: .alert)
             } else {
                 alerta = UIAlertController(title: "Inténtalo de nuevo",
-                                               message: "Con paciencia y esfuerzo todo se puede!",
-                                               preferredStyle: .alert)
+                                           message: "Con paciencia y esfuerzo todo se puede!",
+                                           preferredStyle: .alert)
             }
             
             alerta.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
@@ -149,7 +235,7 @@ class EvaluacionViewController: UIViewController {
                 progressBar.progress = Float(answered_questions) / Float(num_questions!)
                 
                 progressLabel.text = String(answered_questions) + "/" + String(num_questions)
-            
+                
                 if (answered_questions != num_questions) {
                     createQuestion()
                 }
@@ -165,15 +251,15 @@ class EvaluacionViewController: UIViewController {
     }
     
     @IBAction func hideKeyboard() {
-       view.endEditing(true)
+        view.endEditing(true)
     }
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "with_help" {
-
+            
         } else {
             
         }
