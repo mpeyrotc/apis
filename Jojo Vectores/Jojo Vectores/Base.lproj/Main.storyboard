@@ -119,13 +119,29 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Componente 1: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbM-6p-Iq2">
+                                <rect key="frame" x="26" y="138" width="120" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.38816938653738431" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Componente 2: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RK3-bk-ReU">
+                                <rect key="frame" x="26" y="158.5" width="122.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.38816938649999999" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="A73-lX-ugh" secondAttribute="trailing" id="2bG-BO-kiy"/>
                             <constraint firstItem="ude-ts-bT0" firstAttribute="top" secondItem="Ac4-vX-Drc" secondAttribute="bottom" constant="8" id="7QJ-h2-foK"/>
                             <constraint firstItem="Ac4-vX-Drc" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" constant="11" id="BcJ-Mx-9yD"/>
+                            <constraint firstItem="RK3-bk-ReU" firstAttribute="top" secondItem="MbM-6p-Iq2" secondAttribute="bottom" id="BzQ-3R-ibU"/>
+                            <constraint firstItem="MbM-6p-Iq2" firstAttribute="top" secondItem="ude-ts-bT0" secondAttribute="bottom" constant="8" id="HJq-Dm-QPn"/>
+                            <constraint firstItem="MbM-6p-Iq2" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" constant="10" id="KES-K0-bkw"/>
                             <constraint firstItem="ude-ts-bT0" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="LXb-7g-oQu"/>
+                            <constraint firstItem="RK3-bk-ReU" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" constant="10" id="MUA-dn-shU"/>
                             <constraint firstItem="Ac4-vX-Drc" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" constant="8" id="OpG-0s-igd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ac4-vX-Drc" secondAttribute="trailing" constant="11" id="OvF-G0-uQ9"/>
                             <constraint firstItem="Ac4-vX-Drc" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="YCx-fk-RdJ"/>
