@@ -277,7 +277,7 @@ class GameScene: SKScene {
         let x2 = Double(pos.x)
         let y2 = Double(pos.y)
         
-        return sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2))
+        return (sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2)))/5
     }
     
     // Returns the angle of the new vector, with respect to the horizontal
