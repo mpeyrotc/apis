@@ -137,6 +137,9 @@ class GameViewController: UIViewController {
         sumbt.clipsToBounds = true
         sumbt.layer.borderColor = buttonBorderColor.cgColor
         sumbt.layer.borderWidth = 0.7
+        
+        let bckColor = UIColor(rgb: 0xE0DFD5)
+        view.backgroundColor = bckColor
     }
     
     func setLabels(){

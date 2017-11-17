@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Cr2-zM-NUX">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Cr2-zM-NUX">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -184,14 +184,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lH4-TY-T4C">
                                 <rect key="frame" x="5" y="5" width="310" height="558"/>
                                 <subviews>
-                                    <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="esx-4F-RjZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="310" height="294"/>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esx-4F-RjZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="310" height="44"/>
                                         <items>
                                             <navigationItem title="Jojo Vectores" id="Icf-wD-hzx"/>
                                         </items>
                                     </navigationBar>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEI-Hl-Au4">
-                                        <rect key="frame" x="0.0" y="314" width="310" height="46"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEI-Hl-Au4">
+                                        <rect key="frame" x="0.0" y="64" width="310" height="108.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <state key="normal" title="Practica">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -200,8 +200,8 @@
                                             <segue destination="BV1-FR-VrT" kind="show" id="Ik1-Bh-Vl3"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tob-3O-4HY">
-                                        <rect key="frame" x="0.0" y="380" width="310" height="46"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tob-3O-4HY">
+                                        <rect key="frame" x="0.0" y="192.5" width="310" height="108.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <state key="normal" title="Evaluacion">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -210,8 +210,8 @@
                                             <segue destination="KwI-ai-DJB" kind="show" identifier="evaluation" id="5gh-Is-xh8"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPL-bp-zBX">
-                                        <rect key="frame" x="0.0" y="446" width="310" height="46"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPL-bp-zBX">
+                                        <rect key="frame" x="0.0" y="321" width="310" height="108.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <state key="normal" title="Material de Estudio">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -220,8 +220,8 @@
                                             <segue destination="Y45-EP-F24" kind="show" id="XzN-TP-8pO"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeu-yh-dpB">
-                                        <rect key="frame" x="0.0" y="512" width="310" height="46"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeu-yh-dpB">
+                                        <rect key="frame" x="0.0" y="449.5" width="310" height="108.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <state key="normal" title="Creditos">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -270,8 +270,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dso-gR-WAc" userLabel="Top Buttons">
-                                <rect key="frame" x="16" y="127" width="288" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Dso-gR-WAc" userLabel="Top Buttons">
+                                <rect key="frame" x="13.5" y="127" width="293" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6CC-Yq-Y5d">
                                         <rect key="frame" x="0.0" y="0.0" width="144" height="30"/>
@@ -284,7 +284,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7go-M8-hnA">
-                                        <rect key="frame" x="144" y="0.0" width="144" height="30"/>
+                                        <rect key="frame" x="149" y="0.0" width="144" height="30"/>
                                         <state key="normal" title="Volver a empezar"/>
                                         <connections>
                                             <action selector="startAgain:" destination="KwI-ai-DJB" eventType="touchUpInside" id="clZ-U5-vK6"/>
@@ -323,13 +323,13 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="J7b-wG-U3f">
-                                <rect key="frame" x="11" y="457.5" width="299" height="80.5"/>
+                                <rect key="frame" x="3" y="457.5" width="315" height="80.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="tc5-uS-gnK">
-                                        <rect key="frame" x="0.0" y="0.0" width="299" height="50.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="50.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="V7z-zu-Xts" userLabel="Answer Stack">
-                                                <rect key="frame" x="0.0" y="0.0" width="299" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Respuesta:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s49-fm-ysC">
                                                         <rect key="frame" x="0.0" y="0.0" width="85" height="30"/>
@@ -347,8 +347,8 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhH-8m-4yg">
-                                                        <rect key="frame" x="265" y="0.0" width="34" height="30"/>
-                                                        <state key="normal" title="Listo"/>
+                                                        <rect key="frame" x="265" y="0.0" width="50" height="30"/>
+                                                        <state key="normal" title="  Listo  "/>
                                                         <connections>
                                                             <action selector="submitAnswer:" destination="KwI-ai-DJB" eventType="touchUpInside" id="ywc-Vk-9nU"/>
                                                         </connections>
@@ -364,11 +364,11 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="bI5-rX-aDx">
-                                        <rect key="frame" x="0.0" y="50.5" width="69" height="30"/>
+                                        <rect key="frame" x="0.0" y="50.5" width="77" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyB-qw-gcD">
-                                                <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
-                                                <state key="normal" title="Simulador"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="77" height="30"/>
+                                                <state key="normal" title=" Simulador "/>
                                                 <connections>
                                                     <segue destination="BV1-FR-VrT" kind="show" id="JU4-0s-cYJ"/>
                                                 </connections>
@@ -399,9 +399,12 @@
                     </view>
                     <connections>
                         <outlet property="answerTextField" destination="Edm-0a-PoQ" id="NtD-gd-nR3"/>
+                        <outlet property="newQuestion" destination="6CC-Yq-Y5d" id="CGK-c9-Vmj"/>
+                        <outlet property="preguntatxt" destination="AQg-ns-g1a" id="MHc-Wf-UQu"/>
                         <outlet property="progressBar" destination="mWO-La-Rwd" id="LBG-f2-Erf"/>
                         <outlet property="progressLabel" destination="fLL-RZ-ROm" id="RUE-A2-NFK"/>
                         <outlet property="questionTextArea" destination="AQg-ns-g1a" id="4ts-y4-QcJ"/>
+                        <outlet property="reset" destination="7go-M8-hnA" id="OhE-y6-NsN"/>
                         <outlet property="submitButton" destination="xhH-8m-4yg" id="4Ub-CN-Thj"/>
                         <outlet property="withoutHelpButton" destination="eyB-qw-gcD" id="8yS-gs-pqZ"/>
                     </connections>
@@ -435,15 +438,15 @@
                                 </constraints>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIM-Tk-A8C">
-                                <rect key="frame" x="80" y="337" width="161" height="30"/>
-                                <state key="normal" title="tutorial: método gráfico"/>
+                                <rect key="frame" x="76" y="337" width="169" height="30"/>
+                                <state key="normal" title=" tutorial: método gráfico "/>
                                 <connections>
                                     <segue destination="QK8-OF-FPd" kind="show" identifier="MetodoGrafico" id="DfG-ky-KRV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I96-Tj-mCf">
-                                <rect key="frame" x="75" y="375" width="170" height="30"/>
-                                <state key="normal" title="tutorial: método analítico"/>
+                                <rect key="frame" x="71" y="375" width="178" height="30"/>
+                                <state key="normal" title=" tutorial: método analítico "/>
                                 <connections>
                                     <segue destination="QK8-OF-FPd" kind="show" identifier="MetodoAnalitico" id="3ez-QD-d3V"/>
                                 </connections>
@@ -462,6 +465,8 @@
                     </view>
                     <connections>
                         <outlet property="pdfView" destination="lml-oj-nsp" id="u05-DS-8sN"/>
+                        <outlet property="tut1" destination="NIM-Tk-A8C" id="6ny-65-aIF"/>
+                        <outlet property="tut2" destination="I96-Tj-mCf" id="rp9-vK-GpY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7UI-Zc-gVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -561,7 +566,9 @@ El material de repaso para la suma de vectores fue obtenido de la UNAM. El docum
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="creditsTxt" destination="m7q-mu-Jeb" id="vCl-ZA-08j"/>
                         <outlet property="linkTextView" destination="Hhv-om-GuM" id="yTb-DZ-mQP"/>
+                        <outlet property="linkTxt" destination="Hhv-om-GuM" id="rIa-kI-StE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4M-A3-LcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -589,6 +596,6 @@ El material de repaso para la suma de vectores fue obtenido de la UNAM. El docum
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="DfG-ky-KRV"/>
-        <segue reference="Ik1-Bh-Vl3"/>
+        <segue reference="JU4-0s-cYJ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -18,6 +18,9 @@ class VideoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let bckColor = UIColor(rgb: 0xE0DFD5)
+        view.backgroundColor = bckColor
+        
         if typeOfVideo == 1 {
             getVideo(videoCode: "qvw7j9eKGdg")
         } else {
@@ -54,6 +57,5 @@ class VideoViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    
 }
 
