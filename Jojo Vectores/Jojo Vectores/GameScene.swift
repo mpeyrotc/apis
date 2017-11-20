@@ -83,6 +83,12 @@ class GameScene: SKScene {
             })
 
         }
+        
+        if vectors.count <= 0 {
+            controller.moveButton.isEnabled = false
+        } else {
+            controller.moveButton.isEnabled = true
+        }
     }
     
     // Callback function that is called each time the user presses the device
@@ -117,7 +123,7 @@ class GameScene: SKScene {
             createVectorTip(pos: pos, color: vectorColor)
         }
         
-        if movingVector {
+        if movingVector && vectors.count > 0 {
             // erase the vector being moved from the canvas
             lastVector.removeFromParent()
             lastArrow.removeFromParent()
@@ -198,7 +204,7 @@ class GameScene: SKScene {
             controller.points = points
         }
         
-        if movingVector {
+        if movingVector && vectors.count > 0 {
             // add the vector coordinates to the control stack
             let newPoints = lastVectorPoints
             initialPos = (newPoints.startPoint)!

@@ -29,6 +29,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var sumbt: UIButton!
     @IBOutlet weak var compX: UILabel!
     @IBOutlet weak var compY: UILabel!
+    @IBOutlet weak var moveButton: UIButton!
     
     var points = [VectorEndPoints]() // holds the points that conform each vector drawn by the user.
     var arrows = [SKShapeNode]() // holds each triangle made by the vector to emulate their arrow tip.
