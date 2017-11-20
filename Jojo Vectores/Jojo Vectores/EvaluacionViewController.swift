@@ -8,12 +8,14 @@
 
 import UIKit
 import Foundation
+import SpriteKit
+import GameplayKit
 
 protocol RestoreQuestionState {
     func setValues(questionIndex: Int, questionsAnswered: Int)
 }
 
-class EvaluacionViewController: UIViewController {
+class EvaluacionViewController: UIViewController, SaveSimulatorState {
     @IBOutlet weak var questionTextArea: UITextView!
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
@@ -30,6 +32,10 @@ class EvaluacionViewController: UIViewController {
     
     var num_questions: Int!
     var answered_questions: Int!
+    
+    var points = [VectorEndPoints]() // holds the points that conform each vector drawn by the user.
+    var arrows = [SKShapeNode]() // holds each triangle made by the vector to emulate their arrow tip.
+    var vectors = [SKShapeNode]() // holds each line that represents a vector visually to the user.
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -409,14 +415,24 @@ class EvaluacionViewController: UIViewController {
         view.endEditing(true)
     }
     
+    func setValues(p: [VectorEndPoints], a: [SKShapeNode], v: [SKShapeNode]) {
+        // When the child calls the function, update the screen
+        points = p
+        arrows = a
+        vectors = v
+    }
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "with_help" {
+        if segue.identifier == "simulator" {
+            let targetView = segue.destination as! GameViewController
             
-        } else {
-            
+            targetView.arrows = arrows
+            targetView.vectors = vectors
+            targetView.points = points
+            targetView.delegate = self
         }
         hideKeyboard()
     }

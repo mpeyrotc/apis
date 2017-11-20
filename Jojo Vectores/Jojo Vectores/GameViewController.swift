@@ -10,8 +10,13 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
+protocol SaveSimulatorState {
+    func setValues(p: [VectorEndPoints], a: [SKShapeNode], v: [SKShapeNode])
+}
+
 class GameViewController: UIViewController {
     var realScene = GameScene()
+    var delegate: SaveSimulatorState?
 
     @IBOutlet weak var magLb: UILabel!
     @IBOutlet weak var dirLb: UILabel!
@@ -25,8 +30,13 @@ class GameViewController: UIViewController {
     @IBOutlet weak var compX: UILabel!
     @IBOutlet weak var compY: UILabel!
     
+    var points = [VectorEndPoints]() // holds the points that conform each vector drawn by the user.
+    var arrows = [SKShapeNode]() // holds each triangle made by the vector to emulate their arrow tip.
+    var vectors = [SKShapeNode]() // holds each line that represents a vector visually to the user.
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setButtons()
         setLabels()
         setConstraints()
@@ -43,11 +53,14 @@ class GameViewController: UIViewController {
                 let bckColor = UIColor(rgb: 0x1A1423)
                 sceneNode.backgroundColor = bckColor
                 realScene = sceneNode
+                realScene.arrows = arrows
+                realScene.vectors = vectors
+                realScene.points = points
                 realScene.controller = self
                 
                 // Present the scene
                 if let view = self.view as! SKView? {
-                    view.presentScene(sceneNode)
+                    view.presentScene(realScene)
                     view.ignoresSiblingOrder = true
                     view.showsFPS = true
                     view.showsNodeCount = true
@@ -174,6 +187,16 @@ class GameViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    override func viewWillDisappear(_ animated : Bool) {
+        super.viewWillDisappear(animated)
+        
+        // When you want to send data back to the caller
+        // call the method on the delegate
+        if let delegate = self.delegate {
+            delegate.setValues(p: points, a: arrows, v: vectors)
+        }
     }
 }
 

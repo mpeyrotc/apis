@@ -370,7 +370,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
                                                 <state key="normal" title="Simulador"/>
                                                 <connections>
-                                                    <segue destination="BV1-FR-VrT" kind="show" id="JU4-0s-cYJ"/>
+                                                    <segue destination="BV1-FR-VrT" kind="show" identifier="simulator" id="JU4-0s-cYJ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -589,6 +589,6 @@ El material de repaso para la suma de vectores fue obtenido de la UNAM. El docum
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="DfG-ky-KRV"/>
-        <segue reference="Ik1-Bh-Vl3"/>
+        <segue reference="JU4-0s-cYJ"/>
     </inferredMetricsTieBreakers>
 </document>

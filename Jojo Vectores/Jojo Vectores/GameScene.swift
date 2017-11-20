@@ -51,13 +51,38 @@ class GameScene: SKScene {
     var arrows = [SKShapeNode]() // holds each triangle made by the vector to emulate their arrow tip.
     var vectors = [SKShapeNode]() // holds each line that represents a vector visually to the user.
     var controller: GameViewController!
+    var setValues = false
     
     override func sceneDidLoad() {
+        super.sceneDidLoad()
+        setValues = true
+    }
+    
+    override func didMove(to view: SKView) {
+        super.didMove(to: view)
+        
+        removeAllChildren()
         makeGrid()
+        setValues = true
     }
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        
+        if setValues {
+            setValues = false
+            
+            vectors.forEach({ node in
+                node.removeFromParent()
+                addChild(node)
+            })
+            
+            arrows.forEach({ node in
+                node.removeFromParent()
+                addChild(node)
+            })
+
+        }
     }
     
     // Callback function that is called each time the user presses the device
@@ -68,7 +93,7 @@ class GameScene: SKScene {
             shape.name = "vector"
         }
         
-        if movingVector {
+        if movingVector && vectors.count > 0 {
             // reset control variables
             shape = SKShapeNode()
             shape.name = "vector"
@@ -165,6 +190,12 @@ class GameScene: SKScene {
             lastVector = SKShapeNode()
             lastArrow = SKShapeNode()
             lastVectorPoints = VectorEndPoints()
+            
+            controller.arrows = [SKShapeNode]()
+            controller.arrows.append(contentsOf: arrows)
+            controller.vectors = [SKShapeNode]()
+            controller.vectors.append(contentsOf: vectors)
+            controller.points = points
         }
         
         if movingVector {
@@ -181,6 +212,12 @@ class GameScene: SKScene {
             lastVectorPoints = VectorEndPoints()
             // set the move vector flag to off, since the vector has been located successfully to a new position.
             movingVector = false
+            
+            controller.arrows = [SKShapeNode]()
+            controller.arrows.append(contentsOf: arrows)
+            controller.vectors = [SKShapeNode]()
+            controller.vectors.append(contentsOf: vectors)
+            controller.points = points
         }
     }
     
@@ -390,6 +427,10 @@ class GameScene: SKScene {
         makeGrid()
         self.controller.magLb.text = "Magnitud: "
         self.controller.dirLb.text = "Angulo: "
+        
+        controller.vectors = vectors
+        controller.arrows = arrows
+        controller.points = points
     }
     
     // Removes the last vector added by the user, can be called several times.
@@ -413,6 +454,10 @@ class GameScene: SKScene {
                 self.controller.magLb.text = "Magnitud: 0.0"
                 self.controller.dirLb.text = "Angulo 0.0"
             }
+            
+            controller.vectors = vectors
+            controller.arrows = arrows
+            controller.points = points
         }
     }
     
