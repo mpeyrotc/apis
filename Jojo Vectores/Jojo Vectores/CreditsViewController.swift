@@ -12,9 +12,14 @@ class CreditsViewController: UIViewController {
 
     @IBOutlet weak var linkTextView: UITextView!
     
+    @IBOutlet weak var creditsTxt: UITextView!
+    @IBOutlet weak var linkTxt: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setButtons()
         // Do any additional setup after loading the view.
         navigationItem.title = "Créditos"
         
@@ -33,5 +38,12 @@ class CreditsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+    }
+    
+    func setButtons(){
+        let bckColor = UIColor(rgb: 0xE0DFD5)
+        view.backgroundColor = bckColor
+        creditsTxt.backgroundColor = bckColor
+        linkTxt.backgroundColor = bckColor
     }
 }

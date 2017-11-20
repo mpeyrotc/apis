@@ -11,9 +11,13 @@ import UIKit
 class MaterialViewController: UIViewController {
 
     @IBOutlet weak var pdfView: UIWebView!
+    @IBOutlet weak var tut1: UIButton!
+    @IBOutlet weak var tut2: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setButtons()
         
         let url = Bundle.main.url(forResource: "Manual", withExtension: "pdf")
         
@@ -59,6 +63,36 @@ class MaterialViewController: UIViewController {
                 viewController.typeOfVideo = 2
             }
         }
+    }
+    
+    func setButtons(){
+//        let buttonColor = UIColor(rgb: 0x633239)
+//        let buttonBckColor = UIColor(rgb: 0xB75D69)
+//        let buttonBorderColor = UIColor(rgb: 0x4F282D)
+//        Componentesbt.tintColor = buttonColor
+//        Componentesbt.backgroundColor = buttonBckColor
+//        Componentesbt.layer.cornerRadius = 10
+//        Componentesbt.clipsToBounds = true
+//        Componentesbt.layer.borderColor = buttonBorderColor.cgColor
+//        Componentesbt.layer.borderWidth = 1.5
+        let buttonTopColor = UIColor(rgb: 0xEF6461)
+        let buttonTintColor = UIColor(rgb: 0x002838)
+        tut1.backgroundColor = buttonTopColor
+        tut1.layer.cornerRadius = 10
+        tut1.clipsToBounds = true
+        tut1.tintColor = buttonTintColor
+        tut1.layer.borderWidth = 1.5
+        
+        let buttonBotColor = UIColor(rgb: 0xE4B363)
+        tut2.backgroundColor = buttonBotColor
+        tut2.layer.cornerRadius = 10
+        tut2.clipsToBounds = true
+        tut2.tintColor = buttonTintColor
+        tut2.layer.borderWidth = 1.5
+        
+        let bckColor = UIColor(rgb: 0xE0DFD5)
+        view.backgroundColor = bckColor
+        
     }
 
 }

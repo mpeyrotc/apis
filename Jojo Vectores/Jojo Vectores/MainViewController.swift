@@ -82,12 +82,15 @@ class MainViewController: UIViewController, RestoreQuestionState {
         EstudioBT.layer.cornerRadius = 10
         EstudioBT.clipsToBounds = true
         
-        let creditosColor = UIColor(rgb: 0xEACDC2)
+        let creditosColor = UIColor(rgb: 0xEAA78C)
         CreditosBT.backgroundColor = creditosColor
         CreditosBT.layer.borderColor = UIColor.black.cgColor
         CreditosBT.layer.borderWidth = 1.5
         CreditosBT.layer.cornerRadius = 10
         CreditosBT.clipsToBounds = true
+        
+        let bckColor = UIColor(rgb: 0xE0DFD5)
+        view.backgroundColor = bckColor
     }
     
     override var shouldAutorotate: Bool {

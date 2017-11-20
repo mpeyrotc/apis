@@ -20,9 +20,12 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var withoutHelpButton: UIButton!
-    @IBOutlet weak var withHelpButton: UIButton!
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var preguntatxt: UITextView!
+    @IBOutlet weak var newQuestion: UIButton!
+    @IBOutlet weak var reset: UIButton!
+    
     
     var questions: NSArray!
     var currentQuestion = -1
@@ -39,6 +42,8 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setButtons()
         
         // Do any additional setup after loading the view.
         navigationItem.title = "Evaluación"
@@ -68,8 +73,7 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if (sender as! UIButton == withoutHelpButton) ||
-            (sender as! UIButton == withHelpButton) {
+        if (sender as! UIButton == withoutHelpButton) {
             if currentQuestion == -1 {
                 let alerta = UIAlertController(title: "No se puede continuar",
                                                message: "Seleccione una pregunta para pasar al simulador.",
@@ -435,5 +439,40 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             targetView.delegate = self
         }
         hideKeyboard()
+    }
+    
+    func setButtons(){
+        let bckColor = UIColor(rgb: 0xE0DFD5)
+        view.backgroundColor = bckColor
+        preguntatxt.backgroundColor = bckColor
+        
+        let buttonBotColor = UIColor(rgb: 0xE4B363)
+        let buttonTintColor = UIColor(rgb: 0x002838)
+        newQuestion.backgroundColor = buttonBotColor
+        newQuestion.tintColor = buttonTintColor
+        newQuestion.layer.cornerRadius = 10
+        newQuestion.layer.borderWidth = 1.5
+        newQuestion.clipsToBounds = true
+        
+        reset.backgroundColor = buttonBotColor
+        reset.tintColor = buttonTintColor
+        reset.layer.cornerRadius = 10
+        reset.layer.borderWidth = 1.5
+        reset.clipsToBounds = true
+        
+        submitButton.backgroundColor = buttonBotColor
+        submitButton.tintColor = buttonTintColor
+        submitButton.layer.cornerRadius = 10
+        submitButton.layer.borderWidth = 1.5
+        submitButton.clipsToBounds = true
+        
+        withoutHelpButton.backgroundColor = buttonBotColor
+        withoutHelpButton.tintColor = buttonTintColor
+        withoutHelpButton.layer.cornerRadius = 10
+        withoutHelpButton.layer.borderWidth = 1.5
+        withoutHelpButton.clipsToBounds = true
+        
+        let progressTint = UIColor(rgb: 0xEF6461)
+        progressBar.progressTintColor = progressTint
     }
 }
