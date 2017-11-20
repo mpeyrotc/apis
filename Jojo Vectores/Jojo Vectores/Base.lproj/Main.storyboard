@@ -54,7 +54,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Magnitud:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQi-PC-SXh">
                                         <rect key="frame" x="0.0" y="0.0" width="155" height="20.5"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="155" id="Fml-c2-CZQ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="155" id="Fml-c2-CZQ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -63,7 +63,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angulo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhD-iB-FgO">
                                         <rect key="frame" x="175" y="0.0" width="120" height="20.5"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="1gL-gF-v0g"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="1gL-gF-v0g"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -146,9 +146,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Ac4-vX-Drc" secondAttribute="trailing" constant="11" id="OvF-G0-uQ9"/>
                             <constraint firstItem="Ac4-vX-Drc" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="YCx-fk-RdJ"/>
                             <constraint firstItem="A73-lX-ugh" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="i8k-CV-RbI"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MbM-6p-Iq2" secondAttribute="trailingMargin" id="kC5-na-hVO"/>
                             <constraint firstItem="A73-lX-ugh" firstAttribute="top" secondItem="4h9-ON-gx3" secondAttribute="bottom" constant="2.5" id="kWK-fH-lCr"/>
                             <constraint firstItem="A73-lX-ugh" firstAttribute="bottom" secondItem="qHh-Mt-9TT" secondAttribute="top" id="qBE-8O-fkR"/>
                             <constraint firstItem="4h9-ON-gx3" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="uSs-YD-59t"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RK3-bk-ReU" secondAttribute="trailingMargin" id="yFb-fz-Qn9"/>
                         </constraints>
                     </view>
                     <connections>
