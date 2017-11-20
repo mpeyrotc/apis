@@ -31,12 +31,16 @@ class GameViewController: UIViewController {
     @IBOutlet weak var compY: UILabel!
     @IBOutlet weak var moveButton: UIButton!
     
+    var angle_type:Bool!
+    
     var points = [VectorEndPoints]() // holds the points that conform each vector drawn by the user.
     var arrows = [SKShapeNode]() // holds each triangle made by the vector to emulate their arrow tip.
     var vectors = [SKShapeNode]() // holds each line that represents a vector visually to the user.
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        angle_type = UserDefaults.standard.bool(forKey: "angle_type")
         
         setButtons()
         setLabels()
@@ -70,6 +74,10 @@ class GameViewController: UIViewController {
         }
         
         navigationItem.title = "Práctica"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        angle_type = UserDefaults.standard.bool(forKey: "angle_type")
     }
 
     @IBAction func addVector(_ sender: UIBarButtonItem) {

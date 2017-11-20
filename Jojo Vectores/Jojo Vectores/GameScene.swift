@@ -45,6 +45,7 @@ class GameScene: SKScene {
     let vectorColor = UIColor(rgb: 0x72A98F)
     let vectorSumColor = UIColor(rgb: 0x76ED47)
     let componentColor = UIColor(rgb: 0x81C0E8)
+    var angle_type:Bool!
     
     // helper data structures
     var points = [VectorEndPoints]() // holds the points that conform each vector drawn by the user.
@@ -55,8 +56,10 @@ class GameScene: SKScene {
     
     override func sceneDidLoad() {
         super.sceneDidLoad()
+
         setValues = true
     }
+    
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
@@ -68,6 +71,8 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        
+        angle_type = UserDefaults.standard.bool(forKey: "angle_type")
         
         if setValues {
             setValues = false
@@ -287,7 +292,11 @@ class GameScene: SKScene {
         angulo = getAngle(toPoint: pos)
         magnitude = getMagnitude(toPoint: pos)
         self.controller.magLb.text = "Magnitud: " + String(format: "%.2f", magnitude)
-        self.controller.dirLb.text = "Angulo: " + String(format: "%.2f", angulo)
+        if angle_type {
+            self.controller.dirLb.text = "Radianes: " + String(format: "%.2f", angulo)
+        } else {
+            self.controller.dirLb.text = "Angulo: " + String(format: "%.2f", angulo)
+        }
         //print("Magnitude: " + String(getMagnitude(toPoint: pos)))
         //print("Angle: " + String(getAngle(toPoint: pos)))
         shape.path = path.cgPath
@@ -337,6 +346,9 @@ class GameScene: SKScene {
             angle = 180 + diff
         }
         
+        if angle_type {
+            angle = (angle / 180) * 3.14
+        }
         return angle
     }
     
@@ -432,7 +444,11 @@ class GameScene: SKScene {
         removeAllChildren()
         makeGrid()
         self.controller.magLb.text = "Magnitud: "
-        self.controller.dirLb.text = "Angulo: "
+        if angle_type {
+            self.controller.dirLb.text = "Radianes: "
+        } else {
+            self.controller.dirLb.text = "Angulo: "
+        }
         
         controller.vectors = vectors
         controller.arrows = arrows
@@ -455,10 +471,18 @@ class GameScene: SKScene {
                 magnitude = getMagnitude(toPoint: (points.last?.endPoint)!)
                 angulo = getAngle(toPoint: (points.last?.endPoint)!)
                 self.controller.magLb.text = "Magnitud: " + String(format: "%.2f", magnitude)
-                self.controller.dirLb.text = "Angulo: " + String(format: "%.2f", angulo)
+                if angle_type {
+                    self.controller.dirLb.text = "Radianes: " + String(format: "%.2f", angulo)
+                } else {
+                    self.controller.dirLb.text = "Angulo: " + String(format: "%.2f", angulo)
+                }
             } else {
                 self.controller.magLb.text = "Magnitud: 0.0"
-                self.controller.dirLb.text = "Angulo 0.0"
+                if angle_type {
+                    self.controller.dirLb.text = "Radianes 0.0"
+                } else {
+                    self.controller.dirLb.text = "Angulo 0.0"
+                }
             }
             
             controller.vectors = vectors
@@ -514,7 +538,11 @@ class GameScene: SKScene {
             sumAng = getAngle(toPoint: point)
             
             self.controller.SumLb.text = "Magnitud: " + String(format: "%.2f", sumMag)
-            self.controller.SumLb2.text = "Angulo: " + String(format: "%.2f", sumAng)
+            if angle_type {
+                self.controller.SumLb2.text = "Radianes: " + String(format: "%.2f", sumAng)
+            } else {
+                self.controller.SumLb2.text = "Angulo: " + String(format: "%.2f", sumAng)
+            }
             self.controller.compX.text = "Componente X: " + String(format: "%.2f", componentX)
             self.controller.compY.text = "Componente Y: " + String(format: "%.2f", componentY)
         } else {
@@ -524,7 +552,11 @@ class GameScene: SKScene {
                 node.removeFromParent()
             }
             self.controller.SumLb.text = "Magnitud:"
-            self.controller.SumLb2.text = "Angulo:"
+            if angle_type {
+                self.controller.SumLb2.text = "Radianes:"
+            } else {
+                self.controller.SumLb2.text = "Angulo:"
+            }
             self.controller.compX.text = "Componente X: "
             self.controller.compY.text = "Componente Y: "
             showingSum = false
