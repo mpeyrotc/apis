@@ -62,7 +62,7 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
         
         UserDefaults.standard.synchronize()
         
-        num_questions = UserDefaults.standard.integer(forKey: "num_questions")
+        num_questions = 4
         progressLabel.text = String(answered_questions) + "/" + String(num_questions)
         progressBar.progress = Float(answered_questions) / Float(num_questions!)
     }
@@ -113,7 +113,7 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             var_respuesta = Double(var_metros) * cos(Double(var_grados) * Double.pi / 180.0)
             currentAnswer = var_respuesta
             // IMPRIMIR RESPUESTA EN CONSOLA
-            print(currentAnswer)
+            print("ONE" + String(currentAnswer))
             break
         ////////////////////////////////////////////////////////////////////////////////////////////
         case "TWO":
@@ -127,7 +127,7 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             var_respuesta = Double(var_metros) * sin(Double(var_grados) * Double.pi / 180.0)
             currentAnswer = var_respuesta
             // IMPRIMIR RESPUESTA EN CONSOLA
-            print(currentAnswer)
+            print("TWO" + String(currentAnswer))
             break
         ////////////////////////////////////////////////////////////////////////////////////////////
         case "THREE":
@@ -141,7 +141,7 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             var_respuesta = sqrt((var_metros_x * var_metros_x) * (var_metros_y * var_metros_y))
             currentAnswer = var_respuesta
             // IMPRIMIR RESPUESTA EN CONSOLA
-            print(currentAnswer)
+            print("THREE" + String(currentAnswer))
             break
         ////////////////////////////////////////////////////////////////////////////////////////////
         case "FOUR":
@@ -155,7 +155,7 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             var_respuesta = var_fuerza_1 + var_fuerza_2
             currentAnswer = var_respuesta
             // IMPRIMIR RESPUESTA EN CONSOLA
-            print(currentAnswer)
+            print("FOUR" + String(currentAnswer))
             break
         ////////////////////////////////////////////////////////////////////////////////////////////
         case "FIVE":
@@ -169,7 +169,7 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             var_respuesta = atan((var_metros_y / var_metros_x) * Double.pi / 180.0)
             currentAnswer = var_respuesta
             // IMPRIMIR RESPUESTA EN CONSOLA
-            print(currentAnswer)
+            print("FIVE" + String(currentAnswer))
             break
         ////////////////////////////////////////////////////////////////////////////////////////////
         case "SIX":
@@ -191,7 +191,7 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             //
             currentAnswer = var_respuesta
             // IMPRIMIR RESPUESTA EN CONSOLA
-            print(currentAnswer)
+            print("SIX" + String(currentAnswer))
             break
         case "SEVEN":
             // VARIABLES
@@ -206,7 +206,7 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             
             currentAnswer = var_respuesta
             // IMPRIMIR RESPUESTA EN CONSOLA
-            print(currentAnswer)
+            print("SEVEN" + String(currentAnswer))
             break
         case "EIGHT":
             // VARIABLES
@@ -221,7 +221,7 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             
             currentAnswer = var_respuesta
             // IMPRIMIR RESPUESTA EN CONSOLA
-            print(currentAnswer)
+            print("EIGHT" + String(currentAnswer))
             break
         case "NINE":
             // VARIABLES
@@ -250,7 +250,7 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             
             currentAnswer = var_respuesta
             // IMPRIMIR RESPUESTA EN CONSOLA
-            print(currentAnswer)
+            print("NINE" + String(currentAnswer))
             break
         case "TEN":
             // VARIABLES
@@ -273,7 +273,7 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             
             currentAnswer = var_respuesta
             // IMPRIMIR RESPUESTA EN CONSOLA
-            print(currentAnswer)
+            print("TEN" + String(currentAnswer))
             break
         case "ELEVEN":
             // VARIABLES
@@ -296,7 +296,7 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             
             currentAnswer = var_respuesta
             // IMPRIMIR RESPUESTA EN CONSOLA
-            print(currentAnswer)
+            print("ELEVEN" + String(currentAnswer))
             break
         case "TWELVE":
             // VARIABLES
@@ -316,7 +316,7 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             
             currentAnswer = var_respuesta
             // IMPRIMIR RESPUESTA EN CONSOLA
-            print(currentAnswer)
+            print("TWELVE" + String(currentAnswer))
             break
         case "THIRTEEN":
             // VARIABLES
@@ -345,12 +345,8 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             
             currentAnswer = var_respuesta
             // IMPRIMIR RESPUESTA EN CONSOLA
-            print(currentAnswer)
+            print("THIRTEEN" + String(currentAnswer))
             break
-            
-            
-            
-            
         default:
             // nothing
             print("ERROR")
@@ -378,22 +374,17 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             alerta.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             present(alerta, animated: true, completion: nil)
         } else {
-            isCorrect = (abs(Double(answerTextField.text!)! - currentAnswer) < 0.1)
+            isCorrect = (abs(Double(answerTextField.text!)! - currentAnswer) < 2)
             
             var alerta:UIAlertController
             
-            if isCorrect {
-                alerta = UIAlertController(title: "MUY BIEN!",
-                                           message: "Continúa así.",
-                                           preferredStyle: .alert)
-            } else {
+            if !isCorrect {
                 alerta = UIAlertController(title: "Inténtalo de nuevo",
                                            message: "Con paciencia y esfuerzo todo se puede!",
                                            preferredStyle: .alert)
+                alerta.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                present(alerta, animated: true, completion: nil)
             }
-            
-            alerta.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            present(alerta, animated: true, completion: nil)
             
             if isCorrect {
                 answered_questions! += 1
@@ -402,7 +393,24 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
                 progressLabel.text = String(answered_questions) + "/" + String(num_questions)
                 
                 if (answered_questions != num_questions) {
+                    alerta = UIAlertController(title: "MUY BIEN!",
+                                               message: "Continúa así.",
+                                               preferredStyle: .alert)
+                    alerta.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    present(alerta, animated: true, completion: nil)
                     createQuestion()
+                } else {
+                    answered_questions = 0
+                    progressLabel.text = String(answered_questions) + "/" + String(num_questions)
+                    progressBar.progress = 0.0
+                    createQuestion()
+                    
+                    alerta = UIAlertController(title: "FELICIDADES!",
+                                               message: "Has terminado la ronda. Puedes iniciar otra si quieres seguir practicando. Muy buen trabajo :)",
+                                               preferredStyle: .alert)
+                    
+                    alerta.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    present(alerta, animated: true, completion: nil)
                 }
             }
         }
