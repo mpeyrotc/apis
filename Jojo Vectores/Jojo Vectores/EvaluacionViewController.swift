@@ -104,8 +104,8 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
         switch identifier {
         case "ONE":
             // VARIABLES
-            let var_metros = Double(arc4random_uniform(UInt32(100.0)))// MAX METROS
-            let var_grados = Double(arc4random_uniform(UInt32(80.0)))
+            let var_metros = Double(arc4random_uniform(UInt32(100.0))+10)// MAX METROS
+            let var_grados = Double(arc4random_uniform(UInt32(80.0))+10)
             // EDITAR TEXTO DEL PROBLEMA
             question_result = question.replacingOccurrences(of: "VAR_METROS", with: String(describing: var_metros))
             question_result = question_result.replacingOccurrences(of: "VAR_ANGULO", with: String(describing: var_grados))
@@ -118,8 +118,8 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
         ////////////////////////////////////////////////////////////////////////////////////////////
         case "TWO":
             // VARIABLES
-            let var_metros = Double(arc4random_uniform(UInt32(100.0)))// MAX METROS
-            let var_grados = Double(arc4random_uniform(UInt32(80.0)))
+            let var_metros = Double(arc4random_uniform(UInt32(100.0))+10)// MAX METROS
+            let var_grados = Double(arc4random_uniform(UInt32(80.0))+10)
             // EDITAR TEXTO DEL PROBLEMA
             question_result = question.replacingOccurrences(of: "VAR_METROS", with: String(describing: var_metros))
             question_result = question_result.replacingOccurrences(of: "VAR_ANGULO", with: String(describing: var_grados))
@@ -146,8 +146,8 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
         ////////////////////////////////////////////////////////////////////////////////////////////
         case "FOUR":
             // VARIABLES
-            let var_fuerza_1 = Double(arc4random_uniform(UInt32(200.0)))// MAX METROS
-            let var_fuerza_2 = Double(arc4random_uniform(UInt32(200.0)))
+            let var_fuerza_1 = Double(arc4random_uniform(UInt32(200.0))+10)// MAX METROS
+            let var_fuerza_2 = Double(arc4random_uniform(UInt32(200.0))+10)
             // EDITAR TEXTO DEL PROBLEMA
             question_result = question.replacingOccurrences(of: "VAR_FUERZA_1", with: String(describing: var_fuerza_1))
             question_result = question_result.replacingOccurrences(of: "VAR_FUERZA_2", with: String(describing: var_fuerza_2))
@@ -160,8 +160,8 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
         ////////////////////////////////////////////////////////////////////////////////////////////
         case "FIVE":
             // VARIABLES
-            let var_metros_x = Double(arc4random_uniform(UInt32(100.0)))// MAX METROS
-            let var_metros_y = Double(arc4random_uniform(UInt32(100.0)))
+            let var_metros_x = Double(arc4random_uniform(UInt32(100.0))+10)// MAX METROS
+            let var_metros_y = Double(arc4random_uniform(UInt32(100.0))+10)
             // EDITAR TEXTO DEL PROBLEMA
             question_result = question.replacingOccurrences(of: "VAR_METROS_X", with: String(describing: var_metros_x))
             question_result = question_result.replacingOccurrences(of: "VAR_METROS_Y", with: String(describing: var_metros_y))
@@ -174,9 +174,9 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
         ////////////////////////////////////////////////////////////////////////////////////////////
         case "SIX":
             // VARIABLES
-            let var_peso = Double(arc4random_uniform(UInt32(50.0)))// MAX METROS
-            let var_grados_1 = Double(arc4random_uniform(UInt32(80.0)))
-            let var_grados_2 = Double(arc4random_uniform(UInt32(80.0)))
+            let var_peso = Double(arc4random_uniform(UInt32(50.0))+10)// MAX METROS
+            let var_grados_1 = Double(arc4random_uniform(UInt32(80.0))+10)
+            let var_grados_2 = Double(arc4random_uniform(UInt32(80.0))+10)
             //
             //            // EDITAR TEXTO DEL PROBLEMA
             question_result = question.replacingOccurrences(of: "VAR_PESO", with: String(describing: var_peso))
@@ -195,8 +195,8 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             break
         case "SEVEN":
             // VARIABLES
-            let var_peso_1 = Double(arc4random_uniform(UInt32(100.0)))// MAX METROS
-            let var_peso_2 = Double(arc4random_uniform(UInt32(100.0)))
+            let var_peso_1 = Double(arc4random_uniform(UInt32(100.0))+10)// MAX METROS
+            let var_peso_2 = Double(arc4random_uniform(UInt32(100.0))+10)
             
             // EDITAR TEXTO DEL PROBLEMA
             question_result = question.replacingOccurrences(of: "VAR_PESO_1", with: String(describing: var_peso_1))
@@ -210,8 +210,8 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             break
         case "EIGHT":
             // VARIABLES
-            let var_grados = Double(arc4random_uniform(UInt32(80.0)))// MAX METROS
-            let var_peso = Double(arc4random_uniform(UInt32(100.0)))
+            let var_grados = Double(arc4random_uniform(UInt32(80.0))+10)// MAX METROS
+            let var_peso = Double(arc4random_uniform(UInt32(100.0))+10)
             
             // EDITAR TEXTO DEL PROBLEMA
             question_result = question.replacingOccurrences(of: "VAR_PESO", with: String(describing: var_peso))
@@ -225,9 +225,9 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             break
         case "NINE":
             // VARIABLES
-            let var_fuerza_1 = Double(arc4random_uniform(UInt32(100.0)))// MAX METROS
-            let var_fuerza_2 = Double(arc4random_uniform(UInt32(100.0)))
-            let var_fuerza_3 = Double(arc4random_uniform(UInt32(100.0)))
+            let var_fuerza_1 = Double(arc4random_uniform(UInt32(100.0))+10)// MAX METROS
+            let var_fuerza_2 = Double(arc4random_uniform(UInt32(100.0))+10)
+            let var_fuerza_3 = Double(arc4random_uniform(UInt32(100.0))+10)
             
             // EDITAR TEXTO DEL PROBLEMA
             question_result = question.replacingOccurrences(of: "VAR_FUERZA_1", with: String(describing: var_fuerza_1))
@@ -254,10 +254,10 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             break
         case "TEN":
             // VARIABLES
-            let var_distancia_1 = Double(arc4random_uniform(UInt32(100.0)))// NORTE
-            let var_distancia_2 = Double(arc4random_uniform(UInt32(100.0))) // OESTE
-            let var_distancia_3 = Double(arc4random_uniform(UInt32(100.0))) // SUR
-            let var_distancia_4 = Double(arc4random_uniform(UInt32(100.0))) // ESTE
+            let var_distancia_1 = Double(arc4random_uniform(UInt32(100.0))+10)// NORTE
+            let var_distancia_2 = Double(arc4random_uniform(UInt32(100.0))+10) // OESTE
+            let var_distancia_3 = Double(arc4random_uniform(UInt32(100.0))+10) // SUR
+            let var_distancia_4 = Double(arc4random_uniform(UInt32(100.0))+10) // ESTE
             
             // EDITAR TEXTO DEL PROBLEMA
             question_result = question.replacingOccurrences(of: "VAR_DIST_1", with: String(describing: var_distancia_1))
@@ -277,10 +277,10 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             break
         case "ELEVEN":
             // VARIABLES
-            let var_distancia_1 = Double(arc4random_uniform(UInt32(100.0)))// ESTE
-            let var_distancia_2 = Double(arc4random_uniform(UInt32(100.0))) // SUR
-            let var_distancia_3 = Double(arc4random_uniform(UInt32(100.0))) // ESTE
-            let var_distancia_4 = Double(arc4random_uniform(UInt32(100.0))) // NORTE
+            let var_distancia_1 = Double(arc4random_uniform(UInt32(100.0))+10)// ESTE
+            let var_distancia_2 = Double(arc4random_uniform(UInt32(100.0))+10) // SUR
+            let var_distancia_3 = Double(arc4random_uniform(UInt32(100.0))+10) // ESTE
+            let var_distancia_4 = Double(arc4random_uniform(UInt32(100.0))+10) // NORTE
             
             // EDITAR TEXTO DEL PROBLEMA
             question_result = question.replacingOccurrences(of: "VAR_DIST_1", with: String(describing: var_distancia_1))
@@ -300,8 +300,8 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             break
         case "TWELVE":
             // VARIABLES
-            let var_fuerza_1 = Double(arc4random_uniform(UInt32(100.0)))
-            let var_fuerza_2 = Double(arc4random_uniform(UInt32(100.0)))
+            let var_fuerza_1 = Double(arc4random_uniform(UInt32(100.0))+10)
+            let var_fuerza_2 = Double(arc4random_uniform(UInt32(100.0))+10)
             
             // EDITAR TEXTO DEL PROBLEMA
             question_result = question.replacingOccurrences(of: "VAR_FUERZA_1", with: String(describing: var_fuerza_1))
@@ -320,9 +320,9 @@ class EvaluacionViewController: UIViewController, SaveSimulatorState {
             break
         case "THIRTEEN":
             // VARIABLES
-            let var_fuerza_1 = Double(arc4random_uniform(UInt32(100.0)))// MAX METROS
-            let var_fuerza_2 = Double(arc4random_uniform(UInt32(100.0)))
-            let var_fuerza_3 = Double(arc4random_uniform(UInt32(100.0)))
+            let var_fuerza_1 = Double(arc4random_uniform(UInt32(100.0))+10)// MAX METROS
+            let var_fuerza_2 = Double(arc4random_uniform(UInt32(100.0))+10)
+            let var_fuerza_3 = Double(arc4random_uniform(UInt32(100.0))+10)
             
             // EDITAR TEXTO DEL PROBLEMA
             question_result = question.replacingOccurrences(of: "VAR_FUERZA_1", with: String(describing: var_fuerza_1))
