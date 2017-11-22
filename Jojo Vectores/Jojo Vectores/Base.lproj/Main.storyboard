@@ -434,21 +434,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lml-oj-nsp">
-                                <rect key="frame" x="16" y="72" width="288" height="257"/>
+                                <rect key="frame" x="16" y="72" width="288" height="420"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="257" id="Veq-Fv-7St"/>
-                                </constraints>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIM-Tk-A8C">
-                                <rect key="frame" x="76" y="337" width="169" height="30"/>
+                                <rect key="frame" x="76" y="500" width="169" height="30"/>
                                 <state key="normal" title=" tutorial: método gráfico "/>
                                 <connections>
                                     <segue destination="QK8-OF-FPd" kind="show" identifier="MetodoGrafico" id="DfG-ky-KRV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I96-Tj-mCf">
-                                <rect key="frame" x="71" y="375" width="178" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I96-Tj-mCf">
+                                <rect key="frame" x="71" y="538" width="178" height="30"/>
                                 <state key="normal" title=" tutorial: método analítico "/>
                                 <connections>
                                     <segue destination="QK8-OF-FPd" kind="show" identifier="MetodoAnalitico" id="3ez-QD-d3V"/>
@@ -462,6 +459,8 @@
                             <constraint firstItem="I96-Tj-mCf" firstAttribute="top" secondItem="NIM-Tk-A8C" secondAttribute="bottom" constant="8" id="HKG-f0-gzo"/>
                             <constraint firstItem="lml-oj-nsp" firstAttribute="leading" secondItem="vVu-Tv-QeK" secondAttribute="leadingMargin" id="UhO-Vz-7eK"/>
                             <constraint firstItem="NIM-Tk-A8C" firstAttribute="top" secondItem="lml-oj-nsp" secondAttribute="bottom" constant="8" id="WpJ-TV-zAy"/>
+                            <constraint firstItem="57E-xj-J7N" firstAttribute="top" secondItem="I96-Tj-mCf" secondAttribute="bottom" id="mkp-Hz-p21"/>
+                            <constraint firstItem="NIM-Tk-A8C" firstAttribute="height" secondItem="I96-Tj-mCf" secondAttribute="height" id="pZp-dp-QRq"/>
                             <constraint firstItem="I96-Tj-mCf" firstAttribute="centerX" secondItem="vVu-Tv-QeK" secondAttribute="centerX" id="uZ4-8Q-bnY"/>
                             <constraint firstItem="NIM-Tk-A8C" firstAttribute="centerX" secondItem="vVu-Tv-QeK" secondAttribute="centerX" id="z2g-ex-t4Q"/>
                         </constraints>
@@ -598,7 +597,7 @@ El material de repaso para la suma de vectores fue obtenido de la UNAM. El docum
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="DfG-ky-KRV"/>
+        <segue reference="3ez-QD-d3V"/>
         <segue reference="JU4-0s-cYJ"/>
     </inferredMetricsTieBreakers>
 </document>
