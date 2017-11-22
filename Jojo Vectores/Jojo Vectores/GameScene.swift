@@ -440,6 +440,10 @@ class GameScene: SKScene {
         makeGrid()
         self.controller.magLb.text = "Magnitud: "
         self.controller.dirLb.text = "Angulo: "
+        self.controller.SumLb.text = "Magnitud: "
+        self.controller.SumLb2.text = "Angulo: "
+        self.controller.compX.text = "Componente X: "
+        self.controller.compY.text = "Componente Y: "
         
         controller.vectors = vectors
         controller.arrows = arrows
